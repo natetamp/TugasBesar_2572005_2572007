@@ -190,23 +190,29 @@ nav {
     border: 1px solid var(--clr);
     border-radius: 15px;
     color: var(--clr);
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--bclr);
     transition: all 0.4s ease;
+    cursor: pointer;
 }
 .eras-cards .gens:nth-child(1) {
     --clr: #9c6fe0;
+    --bclr: #9c6fe015;
 }
 .eras-cards .gens:nth-child(2) {
     --clr: #f472b6;
+    --bclr: #f472b615;
 }
 .eras-cards .gens:nth-child(3) {
     --clr: #ff2f6e;
+    --bclr: #ff2f6e15;
 }
 .eras-cards .gens:nth-child(4) {
     --clr: #60a5fa;
+    --bclr: #60a5fa15;
 }
 .eras-cards .gens:nth-child(5) {
     --clr: #34d399;
+    --bclr: #34d39915;
 }
 .gens h1 {
     font-size: 36px;
@@ -227,6 +233,7 @@ nav {
     transform: translateY(-8px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px var(--clr);
     background-color: rgba(0, 0, 0, 0.4);
+    color: var(--clr);
 }
 .spotlight {
     padding: 80px 5%;
