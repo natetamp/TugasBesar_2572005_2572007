@@ -1,5 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 * {
     padding: 0;
     margin: 0;
@@ -14,7 +14,7 @@ body {
     color: #f5f5f5;
 }
 body h1, body h2, body h3 {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
 }
 body p, body a, body label {
     font-family: 'Poppins', sans-serif;
@@ -259,7 +259,7 @@ nav {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    z-index: 999;
+    z-index: 998;
 }
 .spotlight-prev {
     left: 20px; 

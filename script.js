@@ -23,15 +23,15 @@ $(function() {
     let animated = false;
 
     $(window).on('scroll', function() {
-        if ($stats.length === 0 || animated) return;
         const topOfWindow = $(window).scrollTop() + $(window).height();
         const topOfStats = $('.cards-stat').offset().top;
 
         if (topOfWindow > topOfStats) {
-            animated = true;
             $stats.each(function() {
                 const $this = $(this);
-                const targetValue = parseInt($this.text().replace(/[^0-9]/g, ''));
+                if ($this.hasClass('done')) return;
+                $this.addClass('done');
+                const targetValue = parseInt($this.data('target'));
                 
                 $({ Counter: 0 }).animate({ Counter: targetValue }, {
                     duration: 1500,
@@ -44,6 +44,11 @@ $(function() {
                     }
                 });
             });
+        } else {
+                $stats.removeClass('done');
+                $stats.each(function () {
+                    $(this).text('0');
+                });
         }
     });
 
