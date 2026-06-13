@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KJOURNAL - K-Pop Culture</title>
+    <link rel="icon" type="image/png" href="img/logo.png" class="logo-kj">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js" defer></script>
+
+    <style>
+        .concept-spotlight-header {
+            margin-top: 60px;
+            margin-bottom: 40px;
+        }
+
+        .beauty-main p {
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .beauty-steps-list {
+            color: #aaa;
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .quiz-sneak-full {
+            width: 100%;
+        }
+
+        #glossarySearch {
+            width: 100%;
+            background-color: #0a0a0a;
+            border: 1px solid #333;
+            border-radius: 10px;
+            color: #f5f5f5;
+            padding: 15px 20px;
+            font-family: 'Poppins', sans-serif;
+            resize: none;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .glossary-card-ko {
+            color: #ff2f6e;
+            font-size: 14px;
+            margin-left: 5px;
+        }
+
+        #noResults {
+            display: none;
+            color: #ff2f6e;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html" class="title">KJOURNAL<span id="dot">.</span></a>
+        <div>
+            <a href="index.html" class="navbut">HOME</a>
+            <a href="history.html" class="navbut">HISTORY</a>
+            <a href="generations.html" class="navbut">GENERATIONS</a>
+            <a href="culture.html" class="navbut active-nav">CULTURE</a>
+            <a href="quiz.html" class="navbut">QUIZ</a>
+        </div>
+        <a href="quiz.html" class="explore-btn">TAKE QUIZ</a>
+    </nav>
+
+    <section class="subpage-hero">
+        <div class="cult-hero-text">
+            <p class="subpage-eyebrow">CULTURE · IDENTITY · COMMUNITY</p>
+            <h1>MORE THAN<br><span>MUSIC.</span></h1>
+            <p class="subpage-hero-sub">K-pop is a total cultural ecosystem — complete with its own language, fashion
+                codes, fan rituals, beauty standards, and global community. Understand the world around the music.</p>
+        </div>
+        <div class="subpage-hero-deco" aria-hidden="true">
+            <span>Fandom</span>
+            <span>Fashion</span>
+            <span>Beauty</span>
+            <span>Hallyu</span>
+        </div>
+    </section>
+
+    <section class="cult-tabs-section">
+        <div class="cult-tabs" id="cultTabs">
+            <button class="cult-tab active" data-target="fandom">Fandom Culture</button>
+            <button class="cult-tab" data-target="fashion">Fashion & Aesthetics</button>
+            <button class="cult-tab" data-target="beauty">K-Beauty</button>
+            <button class="cult-tab" data-target="language">Language & Slang</button>
+            <button class="cult-tab" data-target="industry">The Industry</button>
+        </div>
+    </section>
+
+    <section class="cult-content-section">
+
+        <div class="cult-panel active" id="panel-fandom">
+            <div class="subpage-section-header">
+                <p class="subpage-section-label">FANDOM CULTURE</p>
+                <h2>THE FANS WHO BUILT THE INDUSTRY</h2>
+                <p class="subpage-section-sub">K-pop fandoms are not passive audiences — they are organised,
+                    data-literate global communities that actively shape charts, media coverage, and artists' careers.
+                </p>
+            </div>
+
+            <div class="subpage-cards-grid">
+                <div class="subpage-card">
+                    <div class="subpage-card-icon">📱</div>
+                    <h4>Social Media Power</h4>
+                    <p>K-pop fandoms are the most organised social media communities in the world. X (formerly Twit)
+                        routinely sees K-pop terms dominating global trends. Fan "stream parties" coordinate millions of
+                        simultaneous streams to push songs up charts. BTS's ARMY has been called the most powerful
+                        fandom in digital history.</p>
+                </div>
+                <div class="subpage-card">
+                    <div class="subpage-card-icon">💡</div>
+                    <h4>Lightsticks</h4>
+                    <p>Every major K-pop group has an official lightstick — a branded, Bluetooth-connected glowing wand
+                        sold as merchandise. At concerts, venues synchronize thousands of lightsticks via app, turning
+                        entire arenas into coordinated light shows. The design of a lightstick is a significant part of
+                        a group's visual identity.</p>
+                </div>
+                <div class="subpage-card">
+                    <div class="subpage-card-icon">📸</div>
+                    <h4>Photocards & Albums</h4>
+                    <p>K-pop physical albums contain random photocards — small trading-card-sized photos of individual
+                        members. Fans buy multiple copies to collect all versions and trade globally. A single rare
+                        photocard can sell for hundreds of dollars on secondary markets.</p>
+                </div>
+                <div class="subpage-card">
+                    <div class="subpage-card-icon">🗳️</div>
+                    <h4>Chart & Award Voting</h4>
+                    <p>Major Korean music shows (Inkigayo, Music Bank, M Countdown) use fan votes as a component of
+                        their scoring. Fandoms run dedicated voting operations, often with spreadsheets, bots, and team
+                        leaders across time zones, to secure wins for their group on broadcast TV.</p>
+                </div>
+                <div class="subpage-card">
+                    <div class="subpage-card-icon">🤝</div>
+                    <h4>Fan Projects</h4>
+                    <p>Birthday projects, streaming events, charity donations in an idol's name, and subway birthday ads
+                        — K-pop fans organise and fund elaborate public gestures. Seoul's subway system is lined
+                        year-round with fan-purchased LED birthday displays for idols.</p>
+                </div>
+                <div class="subpage-card">
+                    <div class="subpage-card-icon">⚠️</div>
+                    <h4>Sasaeng Fans</h4>
+                    <p>The darker side of fandom. "Sasaeng" (사생) refers to obsessive fans who invade idols' personal
+                        privacy — tracking addresses, purchasing flight manifests, or attempting physical contact. The
+                        phenomenon is widely condemned but persistent, reflecting the intensity of parasocial
+                        relationships in idol culture.</p>
+                </div>
+            </div>
+
+            <div class="cult-chant-box">
+                <p class="chant-label">FAN CHANTS</p>
+                <h3>WHAT IS A FAN CHANT?</h3>
+                <p>Fan chants (응원법, eungwonbeop) are scripted call-and-response chants fans perform during live music
+                    show recordings and concerts. Each group has an official fan chant for every song — fans memorise
+                    member names called out in specific order at specific moments in the track. It is considered a mark
+                    of being a "true fan" to know them all.</p>
+                <div class="cult-chant-example">
+                    <p class="chant-label">Example — BTS "Boy In Luv" fan chant intro:</p>
+                    <p class="chant-text">"Kim Namjoon! Kim Seokjin! Min Yoongi! Jung Hoseok! Park Jimin! Kim Taehyung!
+                        Jeon Jungkook! BTS!"</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cult-panel" id="panel-fashion">
+            <div class="subpage-section-header">
+                <p class="subpage-section-label">FASHION & AESTHETICS</p>
+                <h2>THE LOOK OF K-POP</h2>
+                <p class="subpage-section-sub">K-pop's visual identity is as carefully constructed as its music. From
+                    stage outfits to music video colour palettes, aesthetics are a core part of the product.</p>
+            </div>
+
+            <div class="subpage-cards-grid">
+                <div class="subpage-card">
+                    <div class="subpage-card-icon">✨</div>
+                    <h4>Concept Culture</h4>
+                    <p>Every K-pop comeback has a "concept" — a unified visual and sonic theme that runs through the
+                        album, music video, photoshoots, and stage outfits. Concepts can range from bright/innocent
+                        ("cute concept") to dark/edgy ("dark concept") to seasonal themes, and groups often switch
+                        dramatically between them.</p>
+                </div>
+                <div class="subpage-card">
+                    <div class="subpage-card-icon">🪡</div>
+                    <h4>Stage Outfits</h4>
+                    <p>K-pop stage costumes are high fashion events in themselves. Groups collaborate with luxury brands
+                        (Chanel, Dior, Louis Vuitton) for music video styling, and have full-time in-house stylists.
+                        Stage outfits are discussed and critiqued by fans as seriously as the music.</p>
+                </div>
+                <div class="subpage-card">
+                    <div class="subpage-card-icon">🧥</div>
+                    <h4>Street Fashion Influence</h4>
+                    <p>K-pop idols are among the most influential fashion figures globally. Items worn by idols — a
+                        specific sneaker, a handbag, a hair clip — can sell out within hours of a post or airport
+                        sighting. This phenomenon, known as the "idol effect," drives billions in fashion retail
+                        annually.</p>
+                </div>
+                <div class="subpage-card">
+                    <div class="subpage-card-icon">💈</div>
+                    <h4>Hair & Colour</h4>
+                    <p>K-pop idols regularly undergo dramatic hair transformations between comebacks — bleaching, vivid
+                        colour dyeing, and complex styling are standard. Hair reveals ahead of a comeback are treated as
+                        major events by fandoms. South Korea's hair salon industry is directly linked to idol trends.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cult-concept-box">
+                <div class="subpage-section-header concept-spotlight-header">
+                    <p class="subpage-section-label">CONCEPT SPOTLIGHT</p>
+                    <h3>HOW CONCEPTS WORK</h3>
+                </div>
+                <div class="concept-steps">
+                    <div class="concept-step">
+                        <span class="step-num">01</span>
+                        <div>
+                            <h5>Teaser Phase</h5>
+                            <p>Weeks before release, agencies drop cryptic images, short video teasers, and mood boards
+                                hinting at the concept without revealing the full picture. Fans analyze every pixel.</p>
+                        </div>
+                    </div>
+                    <div class="concept-step">
+                        <span class="step-num">02</span>
+                        <div>
+                            <h5>MV Release</h5>
+                            <p>The music video is the concept's fully realised visual statement. MV sets, colour
+                                grading, styling, and narrative are all coordinated around the concept theme.</p>
+                        </div>
+                    </div>
+                    <div class="concept-step">
+                        <span class="step-num">03</span>
+                        <div>
+                            <h5>Promotions</h5>
+                            <p>TV show stage outfits, radio appearances, and fan sign outfits all continue the concept's
+                                visual language — even if slightly adapted for different settings.</p>
+                        </div>
+                    </div>
+                    <div class="concept-step">
+                        <span class="step-num">04</span>
+                        <div>
+                            <h5>Next Concept</h5>
+                            <p>When promotions end, the cycle resets. The next comeback concept may be a direct
+                                continuation or a complete 180° pivot — which is often itself a marketing strategy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cult-panel" id="panel-beauty">
+            <div class="subpage-section-header">
+                <p class="subpage-section-label">K-BEAUTY</p>
+                <h2>THE BEAUTY STANDARD</h2>
+                <p class="subpage-section-sub">K-pop and the Korean beauty industry are deeply intertwined. The "glass
+                    skin" aesthetic, multi-step skincare routines, and specific makeup trends have been exported
+                    globally through K-pop's reach.</p>
+            </div>
+
+            <div class="beauty-layout">
+                <div class="beauty-side">
+                    <div class="subpage-card">
+                        <h4>Glass Skin</h4>
+                        <p>The "glass skin" trend — skin so clear and hydrated it appears to have a glassy sheen —
+                            originated in Korea and spread globally through K-pop idol photoshoots and magazine spreads.
+                        </p>
+                    </div>
+                    <br>
+                    <div class="subpage-card">
+                        <h4>Gradient Lips</h4>
+                        <p>A signature K-pop makeup look: colour concentrated at the centre of the lips that fades to
+                            bare skin at the edges, creating a soft, youthful appearance. Popularised by idols in the
+                            2012–2016 period.</p>
+                    </div>
+                    <br>
+                    <div class="subpage-card">
+                        <h4>Aegyo Sal (애교살)</h4>
+                        <p>The soft fatty tissue just below the eyes — considered youthful and attractive in Korean
+                            beauty standards. Idols emphasise this feature with eyeshadow. Cosmetic procedures to create
+                            or enhance aegyo sal are a popular trend in South Korea.</p>
+                    </div>
+                    <br>
+                    <div class="subpage-card">
+                        <h4>Male Idol Beauty</h4>
+                        <p>K-pop normalised skincare and makeup for men on a global scale. Male idols routinely appear
+                            on screen with full makeup, and the "flower boy" (꽃미남) aesthetic challenged Western norms of
+                            masculinity through mass global exposure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cult-panel" id="panel-language">
+            <div class="subpage-section-header">
+                <p class="subpage-section-label">LANGUAGE & SLANG</p>
+                <h2>THE VOCABULARY OF K-POP</h2>
+                <p class="subpage-section-sub">Being a K-pop fan comes with its own language — a mix of Korean terms,
+                    fan-invented vocabulary, and internet slang that has spread far beyond Korean-speaking communities.
+                </p>
+            </div>
+
+            <div class="lang-search-wrapper">
+                <div class="subpage-section-header">
+                    <p class="subpage-section-label">GLOSSARY SEARCH</p>
+                    <p class="subpage-section-sub">Looking for a specific K-Pop terminology?
+                        Type a term below to filter the glossary.</p>
+                </div>
+
+                <div class="quiz-cards">
+                    <div class="quiz-sneak quiz-sneak-full">
+                        <p class="sneak-question">Search Term</p>
+                        <textarea id="glossarySearch" class="lang-search"
+                            placeholder="Type here (e.g., Fandom, Visual, Daesang)..." rows="1"></textarea>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="subpage-cards-grid" id="glossaryGrid">
+                <div class="subpage-card" data-term="bias">
+                    <h4>Bias <span class="lang-ko glossary-card-ko">바이어스</span></h4>
+                    <p>Your favourite member of a K-pop group. "Bias wrecker" is the member who threatens to replace
+                        your bias by being unexpectedly charming or talented.</p>
+                </div>
+                <div class="subpage-card" data-term="maknae">
+                    <h4>Maknae <span class="lang-ko glossary-card-ko">막내</span></h4>
+                    <p>The youngest member of a group. Often treated with affection by older members (hyungs/unnies).
+                        The "maknae line" refers to the youngest sub-group within a group.</p>
+                </div>
+                <div class="subpage-card" data-term="leader">
+                    <h4>Leader <span class="lang-ko glossary-card-ko">리더</span></h4>
+                    <p>The designated spokesperson and representative of a group — usually (but not always) the oldest
+                        member. Responsible for group decisions and public communication on behalf of the team.</p>
+                </div>
+                <div class="subpage-card" data-term="aegyo">
+                    <h4>Aegyo <span class="lang-ko glossary-card-ko">애교</span></h4>
+                    <p>Cute, childlike behaviour or expressions used to be endearing. Idols are often asked to perform
+                        aegyo during fan meetings — a gesture, pose, or cutesy phrase. Fans and non-fans both debate it
+                        intensely.</p>
+                </div>
+                <div class="subpage-card" data-term="visual">
+                    <h4>Visual <span class="lang-ko glossary-card-ko">비주얼</span></h4>
+                    <p>The member of a group designated (officially or by fan consensus) as the most conventionally
+                        attractive. Being the "group visual" carries specific marketing expectations and is often tied
+                        to CF (commercial film) work.</p>
+                </div>
+                <div class="subpage-card" data-term="center">
+                    <h4>Center <span class="lang-ko glossary-card-ko">센터</span></h4>
+                    <p>The member positioned at the front-center of a group's choreography formation — the "face" of the
+                        performance. Often (not always) the visual. Being center is a significant indicator of agency
+                        priority for that member.</p>
+                </div>
+                <div class="subpage-card" data-term="stan">
+                    <h4>Stan</h4>
+                    <p>To be a dedicated fan of a group or idol. Derived from Eminem's 2000 song, popularised by K-pop
+                        Twitter. "Stan culture" refers to the intense, organised fandom behaviour typical in K-pop
+                        communities worldwide.</p>
+                </div>
+                <div class="subpage-card" data-term="hyung">
+                    <h4>Hyung / Unnie <span class="lang-ko glossary-card-ko">형 / 언니</span></h4>
+                    <p>Korean terms for "older brother" (hyung, used by males) and "older sister" (unnie, used by
+                        females). Used by younger group members to address older members. Part of the strict
+                        age-hierarchy within Korean social structure.</p>
+                </div>
+                <div class="subpage-card" data-term="all-kill">
+                    <h4>All-Kill</h4>
+                    <p>When a song simultaneously tops all major Korean digital music charts (Melon, Genie, Bugs, FLO,
+                        Vibe). A "Perfect All-Kill" also includes real-time charts. Achieving an All-Kill is a
+                        significant milestone indicating commercial dominance.</p>
+                </div>
+                <div class="subpage-card" data-term="comeback">
+                    <h4>Comeback <span class="lang-ko glossary-card-ko">컴백</span></h4>
+                    <p>Any new promotional cycle — a new album, single, or EP release. Not necessarily a return from a
+                        long break. Comebacks are events: announced weeks ahead, supported by teaser content, and
+                        accompanied by scheduled TV music show appearances.</p>
+                </div>
+                <div class="subpage-card" data-term="hiatus">
+                    <h4>Hiatus / Enlistment</h4>
+                    <p>Male Korean citizens are required by law to complete approximately 18-21 months of mandatory
+                        military service. For K-pop boy groups, this creates planned hiatuses — a major industry event
+                        that fandom communities prepare for years in advance.</p>
+                </div>
+                <div class="subpage-card" data-term="debut">
+                    <h4>Debut <span class="lang-ko glossary-card-ko">데뷔</span></h4>
+                    <p>The formal first performance or release that marks an idol officially entering the industry.
+                        Debuting is a major milestone after years of training. "Pre-debut" refers to content created or
+                        released before an idol's official group debut.</p>
+                </div>
+                <div class="subpage-card" data-term="variety-show">
+                    <h4>Variety Show <span class="lang-ko glossary-card-ko">예능</span></h4>
+                    <p>Entertainment programs where idols participate in games, challenges, interviews, and comedy
+                        segments. Variety shows help fans discover idols' personalities beyond their performances and
+                        are an important part of K-pop promotion.</p>
+                </div>
+
+                <div class="subpage-card" data-term="reality-show">
+                    <h4>Reality Show <span class="lang-ko glossary-card-ko">리얼리티 쇼</span></h4>
+                    <p>A series focused on idols' daily lives, training process, travel experiences, or
+                        behind-the-scenes activities. Many groups have their own reality content on YouTube, allowing
+                        fans to connect with members on a more personal level.</p>
+                </div>
+
+                <div class="subpage-card" data-term="fancam">
+                    <h4>Fancam <span class="lang-ko glossary-card-ko">직캠</span></h4>
+                    <p>A video that focuses on a single idol during a performance. Originally filmed by fans, fancams
+                        have become a major part of K-pop culture and often showcase an idol's stage presence, dance
+                        skills, and charisma.</p>
+                </div>
+
+                <div class="subpage-card" data-term="self-produced-content">
+                    <h4>Self-Produced Content <span class="lang-ko glossary-card-ko">자체 콘텐츠</span></h4>
+                    <p>Original content created by an idol group or agency and uploaded to their official channels.
+                        Examples include games, challenges, vlogs, and talk shows designed to keep fans engaged between
+                        music releases.</p>
+                </div>
+
+                <div class="subpage-card" data-term="vlog">
+                    <h4>Vlog <span class="lang-ko glossary-card-ko">브이로그</span></h4>
+                    <p>A video diary documenting an idol's daily activities, travels, schedules, or personal interests.
+                        Vlogs offer fans a closer look at life behind the stage and often feature a more casual
+                        atmosphere.</p>
+                </div>
+
+                <div class="subpage-card" data-term="behind-the-scenes">
+                    <h4>Behind-the-Scenes <span class="lang-ko glossary-card-ko">비하인드</span></h4>
+                    <p>Exclusive footage showing the preparation process for music videos, concerts, photoshoots, and
+                        promotions. Behind-the-scenes content highlights the hard work that goes into an idol's
+                        activities.</p>
+                </div>
+            </div>
+            <p class="lang-no-results" id="noResults">No terms found. Try a different search.</p>
+        </div>
+
+        <div class="cult-panel" id="panel-industry">
+            <div class="subpage-section-header">
+                <p class="subpage-section-label">THE INDUSTRY</p>
+                <h2>HOW THE MACHINE WORKS</h2>
+                <p class="subpage-section-sub">K-pop is not just a music genre — it is a vertically integrated
+                    entertainment industry with a specific and unusual business model that has no real equivalent in the
+                    West.</p>
+            </div>
+
+            <p class="subpage-section-label">THE IDOL PIPELINE</p>
+            <div class="subpage-cards-grid">
+                <div class="subpage-card">
+                    <h1 id="dot">01</h1>
+                    <h4>Audition</h4>
+                    <p>Agencies hold open auditions globally. Successful applicants as young as 10–12 sign
+                        multi-year exclusive contracts and begin training.</p>
+                </div>
+                <div class="subpage-card">
+                    <h1 id="dot">02</h1>
+                    <h4>Training</h4>
+                    <p>Trainees undergo intensive daily schedules covering vocals, dance, acting, and language
+                        learning (English, Japanese, Mandarin). Average training period: 2–7 years.</p>
+                </div>
+                <div class="subpage-card">
+                    <h1 id="dot">03</h1>
+                    <h4>Debut</h4>
+                    <p>The agency assembles a group from trainees, packages the concept and visual identity, and
+                        launches with a coordinated media campaign.</p>
+                </div>
+                <div class="subpage-card">
+                    <h1 id="dot">04</h1>
+                    <h4>Promotions</h4>
+                    <p>Music show schedules, fan signs, variety show appearances, and social media content — idols
+                        are on public-facing promotional schedules almost continuously.</p>
+                </div>
+                <div class="subpage-card">
+                    <h1 id="dot">05</h1>
+                    <h4>Global</h4>
+                    <p>Successful groups tour internationally, collaborate with Western artists, sign luxury brand
+                        ambassadorial contracts, and release content in multiple languages.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="card1">
+            <div class="desc">
+                <h3>KJOURNAL<span id="dot">.</span></h3>
+                <p>An interactive digital archive exploring the history and cultural impact of Korean pop music across
+                    five generations. Made for Web Dasar Final Project.</p>
+            </div>
+            <div class="page-directory">
+                <p>PAGES</p>
+                <a href="index.html">Home</a>
+                <a href="history.html">History</a>
+                <a href="generations.html">Generations</a>
+                <a href="culture.html">Culture</a>
+                <a href="quiz.html">Quiz</a>
+            </div>
+            <div class="gen-directory">
+                <p>GENERATIONS</p>
+                <a href="generations.html#Gen1">Gen 1 - The Pioneers</a>
+                <a href="generations.html#Gen2">Gen 2 - The Idol Era</a>
+                <a href="generations.html#Gen3">Gen 3 - Goes Global</a>
+                <a href="generations.html#Gen4">Gen 4 - Dark Wave</a>
+                <a href="generations.html#Gen5">Gen 5 - New Wave</a>
+            </div>
+            <div class="about">
+                <p>ABOUT</p>
+                <a href="#">Our Team</a>
+                <a href="#">References & Citations</a>
+                <a href="https://github.com/natetamp/TugasBesar_2572005_2572007" target="_blank">GitHub Repository</a>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-bottom">
+            <p>&copy; 2026 KJOURNAL — 2572005 2572007 All rights reserved.</p>
+            <p>Universitas Kristen Maranatha Web Dasar - Kelas A</p>
+        </div>
+    </footer>
+</body>
+
+</html>
