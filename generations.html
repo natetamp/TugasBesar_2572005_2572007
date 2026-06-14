@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,45 +8,174 @@
     <link rel="icon" type="image/png" href="img/logo.png" class="logo-kj">
     <link rel="stylesheet" href="style.css">
     <style>
-        .genrs a{
+        .genrs a {
             text-decoration: none;
             color: #555;
             font-size: small;
             margin-right: 4rem;
         }
+
         .genrs a:hover {
             color: #ddd;
             transition: 30ms;
         }
+
         .gennav {
             display: flex;
             justify-content: flex-start;
         }
+
         .genr-label {
             font-size: x-small;
+            background-color: #9c6fe015;
+            max-width: max-content;
+            padding: 0.2rem;
+            color: #9c6fe0;
+            border: 1px solid #9c6fe0;
+            border-radius: 5px;
+            margin-bottom: 0.4rem;
         }
+
         .left h1 {
-            font-variant:normal;
+            font-variant: normal;
         }
-        .explanation{
+
+        .explanation {
             font-size: small;
         }
-        .Gen1{
+
+        .left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            margin-left: 4rem;
+        }
+
+        .right {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            height: 100%;
+            justify-content: space-around;
+        }
+
+        .stb,.boa,.ses {
+            display: grid;
+            grid-template-columns: 60px 1fr 120px;
+            align-items: center;
+            padding: 1rem;
+            background-color: #111;
+            margin-right: 15px;
+            border-radius: 10px;
+        }
+
+        .stb:hover,.boa:hover,.ses:hover{
+            cursor: pointer;
+            border: 2px solid #9c6fe0;
+            transition: 90ms;
+        }
+
+        .Gen1 {
             display: flex;
             flex-direction: row;
-            height: 20rem;
+            height: 35rem;
             justify-content: space-between;
             align-items: flex-start;
-            gap: 40px;
-            background-color:  #9c6fe015;
+            gap: 20px;
+            background-color: #9c6fe015;
         }
-        .labs{
+
+        .logo img{
+            height: 1cm;
+            width: 1cm;
+        }
+
+        .bels p{
+            text-align: right;
+            color:#9c6fe0;
+            font-size: small;
+            text-transform: uppercase;
+        }
+
+        .bels{
+            width: max-content;
+            justify-self: end;
+            padding: 0.3rem 1rem;
+            border-radius: 9999px;
+            border: 1px solid #9c6fe0;
+            background-color:#9c6fe015;
+        }
+
+        @keyframes glow{
+            0%{
+                box-shadow: 0 0 5px #9c6fe0;
+            }
+
+            50%{
+                box-shadow: 0 0 20px #9c6fe0;
+            }
+
+            100%{
+                box-shadow: 0 0 5px #9c6fe0;
+            }
+        }
+
+        .bels:hover{
+            background-color: #111;
+            animation: glow 2s linear infinite;
+            cursor: pointer;
+        }
+
+        .namas p:first-child{
+            font-size: large;
+        }
+
+        .namas p:last-child{
+            font-size: small;
+            color: #aaa;
+
+        }
+
+        .labs {
             display: flex;
             flex-direction: row;
             font-size: small;
+            gap: 0.6rem;
+            margin-top: 0.3rem;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            background: rgb(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+        .modal-content{
+            display:block;
+            position: fixed;
+            z-index: 1001;
+            width: 50%;
+            height: 70%;
+            background-color: black;
+            border-radius: 10px;
+            animation: glow 3s linear infinite;
+        }
+        .modal-content img{
+            width: 11rem;
+            height: 8rem;
+            margin: 2rem;
         }
     </style>
 </head>
+
 <body>
     <nav>
         <a href="index.html" class="title">KJOURNAL<span id="dot">.</span></a>
@@ -81,47 +211,82 @@
             <h1>Where It All Began.</h1>
             <p class="explanation">Before the global stage, before the fandom culture, before the stadiums — there was a small corner of Seoul. The first generation of K-pop artists built the entire industry from the ground up, inventing the idol system and proving Korean pop music could stand on its own terms.</p>
             <span class="labs">
-            <p>STB</p>
-            <p>BOA</p>
-            <p>S.E.S</p>
+                <p>STB</p>
+                <p>BOA</p>
+                <p>S.E.S</p>
             </span>
         </div>
         <div class="right">
             <div class="stb">
-                <div class="logo"></div>
-                    <div class="namas">
-                        <p>Seo Taiji & Boys</p>
-                        <p>서태지와 아이들 · 3 members · 1992</p>
-                    </div>  
-                    <div class="bels">
-                        <p>IVY</p>
-                    </div>
+                <div class="logo">
+                    <img src="img/2pm.jpg" alt="">
                 </div>
-            </div>    
-            <div class="boa">
-                <div class="logo"></div>
-                    <div class="namas">
-                        <p>BoA</p>
-                        <p>권보아 · Soloist · 2000</p>
-                    </div>  
-                    <div class="bels">
-                        <p>Jumping BoA</p>
-                    </div>
+                <div class="namas">
+                    <p>Seo Taiji & Boys</p>
+                    <p>서태지와 아이들 · 3 members · 1992</p>
+                </div>
+                <div class="bels">
+                    <p>IVY</p>
                 </div>
             </div>
             <div class="boa">
                 <div class="logo"></div>
-                    <div class="namas">
-                        <p>S.E.S</p>
-                        <p>에스이에스 · 3 members · 1997</p>
-                    </div>  
-                    <div class="bels">
-                        <p>Friend</p>
-                    </div>
+                <div class="namas">
+                    <p>BoA</p>
+                    <p>권보아 · Soloist · 2000</p>
                 </div>
-            </div>        
+                <div class="bels">
+                    <p>Jumping BoA</p>
+                </div>
+            </div>
+            <div class="ses">
+                <div class="logo"></div>
+                <div class="namas">
+                    <p>S.E.S</p>
+                    <p>에스이에스 · 3 members · 1997</p>
+                </div>
+                <div class="bels">
+                    <p>Friend</p>
+                </div>
+            </div>
+            <div class="ses">
+                <div class="logo"></div>
+                <div class="namas">
+                    <p>S.E.S</p>
+                    <p>에스이에스 · 3 members · 1997</p>
+                </div>
+                <div class="bels">
+                    <p>Friend</p>
+                </div>
+            </div>
+            <div class="ses">
+                <div class="logo"></div>
+                <div class="namas">
+                    <p>S.E.S</p>
+                    <p>에스이에스 · 3 members · 1997</p>
+                </div>
+                <div class="bels">
+                    <p>Friend</p>
+                </div>
+            </div>
         </div>
     </div>
-    
+
+
+    <!-- section buat modal/overlay-nya -->
+    <div class="modal" id="modalSTB">
+        <div class="modal-content" id="STBContent">
+            <div class="modal-top">
+                <img src="img/stb.jpg">
+                <div class="modal-info">
+                    <h2>Seo Taiji & Boys</h2>
+                    <ul>
+                        <li>Debut date: </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
