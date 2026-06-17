@@ -7,7 +7,29 @@
     <title>KJOURNAL - Understand KPop Culture Here</title>
     <link rel="icon" type="image/png" href="img/logo.png" class="logo-kj">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <style>
+        .generation:nth-of-type(1){
+            --accent: #9c6fe0;
+            --accent-bg:#9c6fe015;
+        }
+        .generation:nth-of-type(2){
+            --accent: #f472b6;
+            --accent-bg:#f472b615;
+        }
+        .generation:nth-of-type(3){
+            --accent: #ff2f6e;
+            --accent-bg:#ff2f6e15;
+        }
+        .generation:nth-of-type(4){
+            --accent: #60a5fa;
+            --accent-bg:#60a5fa15;
+        }
+        .generation:nth-of-type(5){
+            --accent: #34d399;
+            --accent-bg:#34d39915;
+        }
+        
         .genrs a {
             text-decoration: none;
             color: #555;
@@ -22,7 +44,10 @@
 
         .gennav {
             display: flex;
+            position: sticky;
             justify-content: flex-start;
+            height: 3rem;
+            top:4rem;
         }
 
         .genr-label {
@@ -30,8 +55,8 @@
             background-color: #9c6fe015;
             max-width: max-content;
             padding: 0.2rem;
-            color: #9c6fe0;
-            border: 1px solid #9c6fe0;
+            color: var(--accent);
+            border: 1px solid var(--accent);
             border-radius: 5px;
             margin-bottom: 0.4rem;
         }
@@ -58,10 +83,19 @@
             flex: 1;
             flex-direction: column;
             height: 100%;
-            justify-content: space-around;
+            justify-content: center;
+            gap: 2rem;
         }
 
-        .stb,.boa,.ses {
+        .groups-index{
+            display: flex;
+            flex-direction: column;
+            height: 50%;
+            justify-content: center;
+            gap:1rem;
+        }
+
+        .group-card{
             display: grid;
             grid-template-columns: 60px 1fr 120px;
             align-items: center;
@@ -71,30 +105,31 @@
             border-radius: 10px;
         }
 
-        .stb:hover,.boa:hover,.ses:hover{
+        .group-card:hover{
             cursor: pointer;
-            border: 2px solid #9c6fe0;
+            border: 2px solid var(--accent);
             transition: 90ms;
-        }
+        }   
 
-        .Gen1 {
+        .generation {
             display: flex;
             flex-direction: row;
             height: 35rem;
             justify-content: space-between;
             align-items: flex-start;
             gap: 20px;
-            background-color: #9c6fe015;
+            background-color: var(--accent-bg);
         }
 
         .logo img{
             height: 1cm;
             width: 1cm;
+            border-radius: 3px;
         }
 
         .bels p{
             text-align: right;
-            color:#9c6fe0;
+            color:var(--accent);
             font-size: small;
             text-transform: uppercase;
         }
@@ -104,28 +139,28 @@
             justify-self: end;
             padding: 0.3rem 1rem;
             border-radius: 9999px;
-            border: 1px solid #9c6fe0;
-            background-color:#9c6fe015;
+            border: 1px solid var(--accent);
+            background-color:var(--accent-bg);
         }
 
         @keyframes glow{
             0%{
-                box-shadow: 0 0 5px #9c6fe0;
+                box-shadow: 0 0 5px var(--accent);
             }
 
             50%{
-                box-shadow: 0 0 20px #9c6fe0;
+                box-shadow: 0 0 20px var(--accent);
             }
 
             100%{
-                box-shadow: 0 0 5px #9c6fe0;
+                box-shadow: 0 0 5px var(--accent);
             }
         }
 
         .bels:hover{
             background-color: #111;
             animation: glow 2s linear infinite;
-            cursor: pointer;
+            cursor:default;
         }
 
         .namas p:first-child{
@@ -145,6 +180,15 @@
             gap: 0.6rem;
             margin-top: 0.3rem;
         }
+
+        .labs p {
+            background-color: var(--accent-bg);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            border-radius: 15px;
+            padding: 0.2rem 0.4rem;
+        }
+
         .modal {
             display: none;
             position: fixed;
@@ -166,20 +210,321 @@
             height: 70%;
             background-color: black;
             border-radius: 10px;
-            animation: glow 3s linear infinite;
+            box-shadow: 0 0 20px var(--accent);
         }
-        .modal-content img{
+        .modal-top img{
             width: 11rem;
             height: 8rem;
             margin: 2rem;
+        }
+        .modal-top{
+            display: flex;
+        }
+        .modal-info{
+            margin-top: 1.8rem;
+            flex: 1;
+        }
+        ul{
+            list-style: none;
+            margin-top: 0.5rem;
+            margin-right: 5rem;
+            text-align: justify;
+        }
+        li{
+            font-size: small;
+        }
+        .modal-btm{
+            width: 35rem;
+            margin-left: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .btm-titled{
+            margin-left: 2rem;
+        }
+
+        .song{
+            display: flex;
+            gap:1rem;
+            align-items: center;
+            width: 120%;
+            margin-top: 0.5rem;
+            padding:  0.3rem;
+            border-bottom: 1px solid #555;
+        }
+        .song:hover{
+            background-color: #555;
+            cursor: default;
+        }
+        .song p{
+            font-size: 12px;
+            color: #aaa;
+        }
+        .song h4{
+            padding: 0.2rem;
+            color: white;
+            border-radius: 4px;
+        }
+        .song-detail{
+            flex: 1;
+        }
+        .infopl{
+            margin-top: 0.5rem;
+            background-color: var(--accent-bg);
+            color: var(--accent);
+            border-radius: 5px;
+            border: 1px solid var(--accent);
+            padding: 0.1rem;
+            font-size: small;
+        }
+        .closeModal{
+            margin-right: 1rem;
+            margin-top: 0.8rem;
+            cursor: default;
+            font-size: 25px;
+        }
+        .closeModal:hover{
+            cursor: pointer;
+            color: var(--accent);
+        }
+        .top-def{
+            color:#ddd;
+        }
+        .top-def p{
+            font-size: medium;
+        }
+        .privyu{
+        width:250px;
+        text-align:center;
+        }
+
+        .modal-btm img{
+            width:10rem;
+            height:10rem;
+            object-fit:cover;
+            border-radius:10px;
+            margin-bottom:1rem;
+            margin-left: 3rem;
+        }
+
+        #spotifyBtn{
+            display:inline-block;
+            margin-top:1rem;
+            padding:.5rem 1rem;
+            background:#1DB954;
+            color:white;
+            text-decoration:none;
+            border-radius:999px;
+        }
+
+        .menu-toggle{
+            display:none;
+            font-size:1.5rem;
+            cursor:pointer;
+        }
+
+        .nav-links{
+            display:flex;
+            gap:1.5rem;
+        }
+        
+    @media (max-width: 992px){
+
+        .generation{
+            flex-direction: column;
+            height: auto;
+            padding: 2rem;
+        }
+
+        .left,
+        .right{
+            width: 100%;
+            margin-left: 0;
+        }
+
+        .groups-index{
+            width: 100%;
+        }
+
+        .group-card{
+            margin-right: 0;
+        }
+
+        .gennav{
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 0.5rem 1rem;
+        }
+
+        .genrs{
+            flex-shrink: 0;
+        }
+
+        .modal-content{
+            width: 85%;
+            height: auto;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-btm{
+            width: auto;
+            margin: 0 2rem 2rem;
+            gap: 2rem;
+        }
+
+        .song{
+            width: 100%;
+        }
+    }
+    
+    @media (max-width: 768px){
+
+        .main-nav{
+            flex-direction: row;
+            position: sticky;
+            gap: 1rem;
+            padding: 1rem;
+            height: 5rem;
+        }
+
+        nav div{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: .8rem;
+        }
+
+        .generation{
+            padding: 1.5rem;
+        }
+
+        .left h1{
+            font-size: 2rem;
+        }
+
+        .explanation{
+            font-size: .9rem;
+            line-height: 1.6;
+        }
+
+        .labs{
+            flex-wrap: wrap;
+        }
+
+        .group-card{
+            grid-template-columns: 50px 1fr;
+            gap: .8rem;
+        }
+
+        .bels{
+            display: none;
+        }
+
+        
+        .modal-content{
+            width: 95%;
+            height: auto;
+            max-height: 90vh;
+        }
+
+        .modal-top{
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .modal-top img{
+                margin: 1rem 0;
+                width: 9rem;
+                height: 9rem;
+                object-fit: cover;
+            }
+
+        .modal-info{
+            margin-top: 0;
+        }
+
+        ul{
+            margin: 1rem;
+        }
+
+            .btm-titled{
+                margin-left: 1rem;
+            }
+
+            .modal-btm{
+                flex-direction: column;
+                width: auto;
+                margin: 1rem;
+                gap: 1.5rem;
+            }
+
+            .songlisted{
+                width: 100%;
+            }
+
+            .song{
+                width: 100%;
+            }
+
+            .privyu{
+                width: 100%;
+            }
+
+            .modal-btm img{
+                width: 180px;
+                height: 180px;
+                margin: 0 auto;
+                display: block;
+            }
+
+            .closeModal{
+                position: absolute;
+                top: .5rem;
+                right: .5rem;
+            }
+            .menu-toggle{
+                display:block;
+            }
+
+            .nav-links{
+                display:none;
+                flex-direction:column;
+
+                position:absolute;
+                top:100%;
+                left:0;
+
+                width:100%;
+                padding:1rem;
+
+                background:#111;
+                border-top:1px solid #333;
+            }
+
+            .nav-links.active{
+                display:flex;
+            }
+
+            .explore-btn{
+                display:none;
+            }
+
+            .gennav{ position:sticky; top:5rem; z-index:100; display:flex; flex-direction: row;gap:1rem; overflow-x:auto; overflow-y:hidden; white-space:nowrap; padding:1rem; background:#000; scrollbar-width:none; } .gennav::-webkit-scrollbar{ display:none; } 
+            .genrs{ flex-shrink:0; } 
+            .genrs a{ display:block; margin-right:0; padding:.5rem 1rem; border-radius:999px; background:#111; border:1px solid #333; font-size:.8rem; }
         }
     </style>
 </head>
 
 <body>
-    <nav>
+    <nav class="main-nav">
         <a href="index.html" class="title">KJOURNAL<span id="dot">.</span></a>
-        <div>
+        <i class="fa-solid fa-bars menu-toggle"></i>
+        <div class="nav-links">
             <a href="index.html" class="navbut">HOME</a>
             <a href="history.html" class="navbut">HISTORY</a>
             <a href="generations.html" class="navbut">GENERATIONS</a>
@@ -205,7 +550,7 @@
             <a href="#Gen5">GEN 5 — NEW WAVE </a>
         </div>
     </nav>
-    <div class="Gen1" id="Gen1">
+    <div class="generation" id="Gen1">
         <div class="left">
             <p class="genr-label">1ST GENERATION · 1992-2002</p>
             <h1>Where It All Began.</h1>
@@ -217,76 +562,449 @@
             </span>
         </div>
         <div class="right">
-            <div class="stb">
-                <div class="logo">
-                    <img src="img/2pm.jpg" alt="">
+            <div class="top-def">
+                <h1>Top 3 Groups of Gen 1</h1>
+                <p>Every generations have their own "superhero". In the first generations, these three are the "heroes".</p>
+            </div>
+            <div class="groups-index">
+                <div class="group-card" data-group="stb">
+                    <div class="logo">
+                        <img src="img/gr-logos/stb.jpg" alt="">
+                    </div>
+                    <div class="namas">
+                        <p>Seo Taiji and Boys</p>
+                        <p>서태지와 아이들 · 3 Members · 1992</p>
+                    </div>
+                    <div class="bels">
+                        <p>IVY</p>
+                    </div>
                 </div>
-                <div class="namas">
-                    <p>Seo Taiji & Boys</p>
-                    <p>서태지와 아이들 · 3 members · 1992</p>
+                <div class="group-card" data-group="boa">
+                    <div class="logo"><img src="img/gr-logos/boa.jpg" ></div>
+                    <div class="namas">
+                        <p>BoA</p>
+                        <p>권보아 · Soloist · 2000</p>
+                    </div>
+                    <div class="bels">
+                        <p>Jumping BoA</p>
+                    </div>
                 </div>
-                <div class="bels">
-                    <p>IVY</p>
+                <div class="group-card" data-group="ses">
+                    <div class="logo"><img src="img/gr-logos/ses.jpg" ></div>
+                    <div class="namas">
+                        <p>S.E.S</p>
+                        <p>에스이에스 · 3 Members · 1997</p>
+                    </div>
+                    <div class="bels">
+                        <p>Friend</p>
+                    </div>
                 </div>
             </div>
-            <div class="boa">
-                <div class="logo"></div>
-                <div class="namas">
-                    <p>BoA</p>
-                    <p>권보아 · Soloist · 2000</p>
+        </div>
+        
+    </div>
+    <div class="generation" id="Gen2">
+        <div class="left">
+            <p class="genr-label">2ND GENERATION · 2003-2012</p>
+            <h1>The Idol Era Rises.</h1>
+            <p class="explanation">Polished choreography, structured training systems, and the birth of organized fandom culture. The second generation refined the K-pop formula to a science — and started the Hallyu Wave that would sweep across Asia and beyond.</p>
+            <span class="labs">
+                <p>TVXQ</p>
+                <p>SNSD</p>
+                <p>BIGBANG</p>
+            </span>
+        </div>
+        <div class="right">
+            <div class="top-def">
+                <h1>Top 3 Groups of Gen 2</h1>
+                <p>Every generations have their own "superhero". In the first generations, these three are the "heroes".</p>
+            </div>
+            <div class="groups-index">
+                <div class="group-card" data-group="tvxq">
+                    <div class="logo">
+                        <img src="img/gr-logos/tvxq.jpg" alt="">
+                    </div>
+                    <div class="namas">
+                        <p>TVXQ</p>
+                        <p>동방신기 · 2 Members · 2003</p>
+                    </div>
+                    <div class="bels">
+                        <p>Cassiopeia</p>
+                    </div>
                 </div>
-                <div class="bels">
-                    <p>Jumping BoA</p>
+                <div class="group-card" data-group="snsd">
+                    <div class="logo"><img src="img/gr-logos/snsd logo.jpg" ></div>
+                    <div class="namas">
+                        <p>SNSD</p>
+                        <p>소녀시대 · 9 Members · 2007</p>
+                    </div>
+                    <div class="bels">
+                        <p>Sone</p>
+                    </div>
+                </div>
+                <div class="group-card" data-group="bigbang">
+                    <div class="logo"><img src="img/gr-logos/bigbang.jpg" ></div>
+                    <div class="namas">
+                        <p>BIGBANG</p>
+                        <p>빅뱅 · 5 members · 2006</p>
+                    </div>
+                    <div class="bels">
+                        <p>VIP</p>
+                    </div>
                 </div>
             </div>
-            <div class="ses">
-                <div class="logo"></div>
-                <div class="namas">
-                    <p>S.E.S</p>
-                    <p>에스이에스 · 3 members · 1997</p>
+        </div>
+    </div>
+    <div class="generation" id="Gen3">
+        <div class="left">
+            <p class="genr-label">3RD GENERATION · 2013-2017</p>
+            <h1>They Broke The Internet.</h1>
+            <p class="explanation">BTS. BLACKPINK. TWICE. The third generation didn't just expand K-pop's reach — they made it truly global. Social media, YouTube, and a new generation of devoted fans worldwide turned these groups into a cultural phenomenon unlike anything before them.</p>
+            <span class="labs">
+                <p>BTS</p>
+                <p>BLACKPINK</p>
+                <p>TWICE</p>
+            </span>
+        </div>
+        <div class="right">
+            <div class="top-def">
+                <h1>Top 3 Groups of Gen 3</h1>
+                <p>Every generations have their own "superhero". In the first generations, these three are the "heroes".</p>
+            </div>
+            <div class="groups-index">
+                <div class="group-card" data-group="bts">
+                    <div class="logo">
+                        <img src="img/gr-logos/bts.jpg" alt="">
+                    </div>
+                    <div class="namas">
+                        <p>BTS</p>
+                        <p>방탄소년단 · 7 Members · 2013</p>
+                    </div>
+                    <div class="bels">
+                        <p>Army</p>
+                    </div>
                 </div>
-                <div class="bels">
-                    <p>Friend</p>
+                <div class="group-card" data-group="blackpink">
+                    <div class="logo"><img src="img/gr-logos/bp.jpg" ></div>
+                    <div class="namas">
+                        <p>Blackpink</p>
+                        <p>블랙핑크 · 4 Members · 2016</p>
+                    </div>
+                    <div class="bels">
+                        <p>Blink</p>
+                    </div>
+                </div>
+                <div class="group-card" data-group="twice">
+                    <div class="logo"><img src="img/gr-logos/twice.jpg" ></div>
+                    <div class="namas">
+                        <p>TWICE</p>
+                        <p>트와이스 · 9 members · 2015</p>
+                    </div>
+                    <div class="bels">
+                        <p>Once</p>
+                    </div>
                 </div>
             </div>
-            <div class="ses">
-                <div class="logo"></div>
-                <div class="namas">
-                    <p>S.E.S</p>
-                    <p>에스이에스 · 3 members · 1997</p>
+        </div>
+    </div>
+    <div class="generation" id="Gen4">
+        <div class="left">
+            <p class="genr-label">4TH GENERATION · 2018-2022</p>
+            <h1>Darker. Bolder.</h1>
+            <p class="explanation">Concept-heavy, performance-driven, and unapologetically experimental. The fourth generation redefined what an idol could be — more self-expressed, more genre-fluid, and less willing to conform to the polished templates of their predecessors.</p>
+            <span class="labs">
+                <p>SKZ</p>
+                <p>ITZY</p>
+                <p>IVE</p>
+            </span>
+        </div>
+        <div class="right">
+            <div class="top-def">
+                <h1>Top 3 Groups of Gen 4</h1>
+                <p>Every generations have their own "superhero". In the fourth generations, these three are the "heroes".</p>
+            </div>
+            <div class="groups-index">
+                <div class="group-card" data-group="skz">
+                    <div class="logo">
+                        <img src="img/gr-logos/stray kids logo_.jpg" alt="">
+                    </div>
+                    <div class="namas">
+                        <p>Stray Kids</p>
+                        <p>스트레이 키즈 · 8 Members · 2018</p>
+                    </div>
+                    <div class="bels">
+                        <p>Stay</p>
+                    </div>
                 </div>
-                <div class="bels">
-                    <p>Friend</p>
+                <div class="group-card" data-group="itzy">
+                    <div class="logo"><img src="img/gr-logos/itzy.jpg" ></div>
+                    <div class="namas">
+                        <p>Itzy</p>
+                        <p>있지 · 5 Members · 2019</p>
+                    </div>
+                    <div class="bels">
+                        <p>Midzy</p>
+                    </div>
+                </div>
+                <div class="group-card" data-group="ive">
+                    <div class="logo"><img src="img/gr-logos/ive.jpg" ></div>
+                    <div class="namas">
+                        <p>IVE</p>
+                        <p>트와이스 · 9 members · 2015</p>
+                    </div>
+                    <div class="bels">
+                        <p>Once</p>
+                    </div>
                 </div>
             </div>
-            <div class="ses">
-                <div class="logo"></div>
-                <div class="namas">
-                    <p>S.E.S</p>
-                    <p>에스이에스 · 3 members · 1997</p>
+        </div>
+    </div>
+    <div class="generation" id="Gen5">
+        <div class="left">
+            <p class="genr-label">5TH GENERATION · 2023-PRESENT</p>
+            <h1>The new wave.</h1>
+            <p class="explanation">Post-pandemic, post-algorithm, post-genre. The fifth generation grew up watching their predecessors dominate the world — and they're writing a different story. Softer, more experimental, and less bound by the formulas that defined the generations before them.</p>
+            <span class="labs">
+                <p>ZB1</p>
+                <p>ILLIT</p>
+                <p>BM</p>
+            </span>
+        </div>
+        <div class="right">
+            <div class="top-def">
+                <h1>Top 3 Groups of Gen 5</h1>
+                <p>Every generations have their own "superhero". In the fifth generations, these three are the "heroes".</p>
+            </div>
+            <div class="groups-index">
+                <div class="group-card" data-group="zb1">
+                    <div class="logo">
+                        <img src="img/gr-logos/ZB1.jpg" alt="">
+                    </div>
+                    <div class="namas">
+                        <p>ZEROBASEONE (ZB1)</p>
+                        <p>제로베이스원 · 5 Members · 2023</p>
+                    </div>
+                    <div class="bels">
+                        <p>Zerose</p>
+                    </div>
                 </div>
-                <div class="bels">
-                    <p>Friend</p>
+                <div class="group-card" data-group="illit">
+                    <div class="logo"><img src="img/gr-logos/illit.jpg" ></div>
+                    <div class="namas">
+                        <p>ILLIT</p>
+                        <p>아일릿 · 5 Members · 2024</p>
+                    </div>
+                    <div class="bels">
+                        <p>Gllit</p>
+                    </div>
+                </div>
+                <div class="group-card" data-group="bm">
+                    <div class="logo"><img src="img/gr-logos/bm.jpg" ></div>
+                    <div class="namas">
+                        <p>BABYMONSTER</p>
+                        <p>베이비몬스터 · 7 members · 2023</p>
+                    </div>
+                    <div class="bels">
+                        <p>Monstiez</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
 
-    <!-- section buat modal/overlay-nya -->
-    <div class="modal" id="modalSTB">
-        <div class="modal-content" id="STBContent">
-            <div class="modal-top">
-                <img src="img/stb.jpg">
-                <div class="modal-info">
-                    <h2>Seo Taiji & Boys</h2>
-                    <ul>
-                        <li>Debut date: </li>
-                    </ul>
+
+    <!-- section buat modal/overlay-nya  -->
+    <div class="modal" id="groupModal">
+    <div class="modal-content">
+
+        <div class="modal-top">
+            <img id="modalImg">
+            <div class="modal-info">
+                <h2 id="modalTitle"></h2>
+                <ul id="modalInfo"></ul>
+            </div>
+            <span class="closeModal">&times;</span>
+        </div>
+
+        <h2 class="btm-titled" id="songTitle"></h2>
+        <div class="modal-btm">
+            <div class="songlisted" id="songList"></div>
+                <img id="previewCover"
+                    src=""
+                    alt=""
+                    style="display:none;">
+                <div class="privyu" id="previewBox">
+                    <h3 id="previewTitle">
+                        Hover the song you want to preview
+                    </h3>
+                    <a id="spotifyBtn"
+                    target="_blank"
+                    style="display:none;">
+                    Open in Spotify
+                    </a>
                 </div>
             </div>
         </div>
     </div>
+</div>
+<script>
+let groupsData = {};
+
+const modal = document.getElementById("groupModal");
+
+fetch("groups.json")
+    .then(response => response.json())
+    .then(data => {
+
+        groupsData = data;
+
+        document.querySelectorAll(".group-card")
+            .forEach(card => {
+
+                card.addEventListener("click", () => {
+
+                    const groupId = card.dataset.group;
+
+                    const generation = card.closest(".generation");
+
+                    const accent = getComputedStyle(generation).getPropertyValue("--accent");
+
+                    const accentBg = getComputedStyle(generation).getPropertyValue("--accent-bg");
+
+                    modal.style.setProperty("--accent", accent);
+                    modal.style.setProperty("--accent-bg", accentBg);
+
+                    openModal(groupId);
+
+                });
+
+            });
+
+    });
+
+
+function openModal(groupId) {
+
+    const group = groupsData[groupId];
+
+    if (!group) return;
+
+
+    document.getElementById("modalImg").src =
+        group.image;
+
+    document.getElementById("modalImg").alt =
+        group.name;
+
+
+    document.getElementById("modalTitle").textContent =
+        group.name;
+
+    document.getElementById("songTitle").textContent =
+        `${group.name}'s Top 3 Songs`;
+
+
+    document.getElementById("modalInfo").innerHTML = `
+        <li>Debut date: ${group.debut}</li>
+        <li>Members: ${group.members}</li>
+        <li class="infopl">${group.description}</li>
+    `;
+
+    const songList =
+        document.getElementById("songList");
+
+    songList.innerHTML = "";
+
+    group.songs.forEach((song, index) => {
+
+        songList.innerHTML += `
+            <div class="song" 
+            data-cover="${song.cover}"
+            data-title="${song.title}"
+            data-spotify="${song.spotify}">
+
+                <h4>${index + 1}</h4>
+
+                <div class="song-detail">
+                    <p>${song.title}</p>
+                    <p>${song.album}</p>
+                </div>
+
+            </div>
+        `;
+
+    });
+
+    document.querySelectorAll(".song").forEach(song => {
+
+    song.addEventListener("mouseenter", () => {
+
+        document.getElementById("previewCover").src =
+            song.dataset.cover;
+
+        document.getElementById("previewCover").style.display =
+            "block";
+
+        document.getElementById("previewTitle").textContent =
+            song.dataset.title;
+
+        document.getElementById("spotifyBtn").href =
+            song.dataset.spotify;
+
+        document.getElementById("spotifyBtn").style.display =
+            "inline-block";
+    });
+
+});
+
+    modal.style.display = "flex";
+}
+
+
+document.querySelector(".closeModal")
+    .addEventListener("click", () => {
+
+        resetPreview();
+        modal.style.display = "none";
+
+    });
+
+modal.addEventListener("click", (e) => {
+
+    if (e.target === modal) {
+
+        resetPreview();
+        modal.style.display = "none";
+
+    }
+
+});
+
+function resetPreview(){
+
+    document.getElementById("previewCover").src = "";
+    document.getElementById("previewCover").style.display = "none";
+
+    document.getElementById("previewTitle").textContent =
+        "Hover the song you want to preview";
+
+    document.getElementById("spotifyBtn").style.display =
+        "none";
+
+}
+
+const menuToggle =
+    document.querySelector(".menu-toggle");
+
+const navLinks =
+    document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+</script>
 </body>
 
 </html>

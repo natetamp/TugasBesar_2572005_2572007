@@ -1,0 +1,408 @@
+{
+    "stb": {
+        "name": "Seo Taiji and Boys",
+        "image": "img/stb.jpg",
+        "debut": "March 23rd 1992",
+        "members": "Seo Taiji, Yang Hyunsuk, Lee Juno",
+        "description": "Pioneers of modern K-pop who introduced Hiphop, Rap, Dance, and Rock, elements into Korean pop music.",
+        "songs": [
+            {
+                "title": "I Know",
+                "album": "Seo Taiji and Boys",
+                "cover":"img/covers/stb/iknow.jpg",
+                "spotify":"https://open.spotify.com/track/28v5XsF5Weg0SeXK3xSKcV?si=9d5402aff870466d"
+            },
+            {
+                "title": "Come Back Home",
+                "album": "Seo Taiji and Boys IV",
+                "cover":"img/covers/stb/cbh.jpg",
+                "spotify":"https://open.spotify.com/track/5sJTlfMwhlvspaozMic4Ca?si=7fd30ba601e44333"
+            },
+            {
+                "title": "Classroom Idea",
+                "album": "Seo Taiji and Boys III",
+                "cover":"img/covers/stb/cidea.jpg",
+                "spotify":"https://open.spotify.com/track/26gRL70VtiBPmsSkd6H0mU?si=40a4922096974c3d"
+            }
+        ]
+    },
+
+    "boa": {
+        "name": "BoA",
+        "image": "img/boa.jpg",
+        "debut": "August 25th 2000",
+        "members": "BoA (Soloist)",
+        "description": "The 'Queen of K-pop' who pioneered K-pop's expansion into Japan and the international music scene.",
+        "songs": [
+            {
+                "title": "No.1",
+                "album": "No.1",
+                "cover":"img/covers/boa/no1.jpg",
+                "spotify":"https://open.spotify.com/track/4RtHEggWfFWknuAsRdkyku?si=acd7b4e310e74ce2"
+            },
+            {
+                "title": "Atlantis Princess",
+                "album": "Atlantis Princess",
+                "cover":"img/covers/boa/aprincess.jpg",
+                "spotify":"https://open.spotify.com/track/7sQaZvlFFqlBsObK8A3y0S?si=5029da9dbbb7485b"
+            },
+            {
+                "title": "Only One",
+                "album": "Only One",
+                "cover":"img/covers/boa/onliwan.jpg",
+                "spotify":"https://open.spotify.com/track/3Hyl7YrOtBcnh1geON2kSO?si=2638466d0009434e"
+            }
+        ]
+    },
+    "ses": {
+        "name": "S.E.S",
+        "image": "img/ses.jpg",
+        "debut": "November 1st 1997",
+        "members": "Bada, Eugene, Shoo",
+        "description": "One of K-pop's pioneering girl groups and SM Entertainment's first girl group. Help building today's Kpop.",
+        "songs": [
+            {
+                "title": "I'm Your Girl",
+                "album": "I'm Your Girl",
+                "cover":"img/covers/ses/iyg.jpg",
+                "spotify":"https://open.spotify.com/track/5I8mg57tDvhGGGC3x14mIZ?si=57023d264b674106"
+            },
+            {
+                "title": "Dreams Come True",
+                "album": "Sea & Eugene & Shoo",
+                "cover":"img/covers/ses/dct.jpg",
+                "spotify":"https://open.spotify.com/track/6whFRgwg7je2SYzpSfansM?si=a2fd571222b5431f"
+            },
+            {
+                "title": "Love",
+                "album": "LOVE",
+                "cover":"img/covers/ses/love.jpg",
+                "spotify":"https://open.spotify.com/track/4At8x7VjqQ4zUiWpKgH6lu?si=3a2f47add61f4c8a"
+            }
+        ]
+    },
+    "tvxq": {
+        "name": "TVXQ",
+        "image": "img/tvxq.jpg",
+        "debut": "January 14th 2004",
+        "members": "U-Know-Yunho, Max-Changmin",
+        "description": "A legendary Kpop group known for powerful vocals, iconic performances and shaping early Kpop history globally.",
+        "songs": [
+            {
+                "title": "Mirotic",
+                "album": "Mirotic",
+                "cover":"img/covers/tvxq/mirotic.jpg",
+                "spotify":"https://open.spotify.com/track/6cqxKuBAu3CArdh3BvIQHi?si=2116a661b6234c83"
+            },
+            {
+                "title": "Rising Sun",
+                "album": "Rising Sun",
+                "cover":"img/covers/tvxq/rsun.jpg",
+                "spotify":"https://open.spotify.com/track/4Ak5M4CD9XGkSUmW0loxAl?si=0610cfadee6d4789"
+            },
+            {
+                "title": "Keep Your Head Down",
+                "album": "Keep Your Head Down",
+                "cover":"img/covers/tvxq/kyhd.jpg",
+                "spotify":"https://open.spotify.com/track/0D67kpNNxN6ANuSI6G6UtN?si=a5709dcab8504b6c"
+            }
+        ]
+    },
+    "snsd": {
+        "name": "SNSD",
+        "image": "img/snsd.jpg",
+        "debut": "August 5th 2007",
+        "members": "Taeyeon, Sunny, Tiffany, Hyoyeon, Yuri, Sooyoung, Yoona, Seohyun",
+        "description": "A Kpop girl group known for their hit songs, strong stage presence, and major role in shaping the global rise of Kpop.",
+        "songs": [
+            {
+                "title": "Into the New World",
+                "album": "Girls' Generation",
+                "cover":"img/covers/snsd/itnw.jpg",
+                "spotify":"https://open.spotify.com/track/24Gy6lVtCd8nOL2vzZiFyV?si=86d1214ee5044454"
+            },
+            {
+                "title": "Genie",
+                "album": "Genie",
+                "cover":"img/covers/snsd/genie.jpg",
+                "spotify":"https://open.spotify.com/track/7m48u7EC4gnCfAhwoLfbCE?si=92480ec2409c4083"
+            },
+            {
+                "title": "Gee",
+                "album": "Oh!",
+                "cover":"img/covers/snsd/gee.jpg",
+                "spotify":"https://open.spotify.com/track/0t7kjpVLgOYITrSfFCoBEA?si=42e9b0e11fcc40e3"
+            }
+        ]
+    },
+    "bigbang": {
+        "name": "BIGBANG",
+        "image": "img/bigbang.jpg",
+        "debut": "August 19th 2006",
+        "members": "G-Dragon, T.O.P, Taeyang, Daesung",
+        "description": "Group known for shaping modern Kpop with a strong hiphop and experimental sound, self produced music, and impactful stage performances.",
+        "songs": [
+            {
+                "title": "BANG BANG BANG",
+                "album": "MADE",
+                "cover":"img/covers/bigbang/bang.jpg",
+                "spotify":"https://open.spotify.com/track/3dI59jLoFMjMAyUAyRZnkE?si=7e47f5b5392c4e4b"
+            },
+            {
+                "title": "Haru Haru",
+                "album": "Stand Up",
+                "cover":"img/covers/bigbang/haru.jpg",
+                "spotify":"https://open.spotify.com/track/1L4d2lafz1odpIMe8va21X?si=3f1bbb12c0c546c8"
+            },
+            {
+                "title": "Fantastic Baby",
+                "album": "ALIVE",
+                "cover":"img/covers/bigbang/fb.jpg",
+                "spotify":"https://open.spotify.com/track/26eV0R7nbqtlzh316ncU99?si=8d4e468a2cb046b3"
+            }
+        ]
+    },
+    "bts": {
+        "name": "BTS",
+        "image": "img/bts.jpg",
+        "debut": "June 13th 2013",
+        "members": "RM, Jin, SUGA, J-Hope, Jimin, V, Jungkook",
+        "description": "South Korean boy group known for blending hiphop, pop, and R&B. They become one of the most influential Kpop acts worldwide.",
+        "songs": [
+            {
+                "title": "Spring Day",
+                "album": "You Never Walk Alone",
+                "cover":"img/covers/bts/sprday.jpg",
+                "spotify":"https://open.spotify.com/track/2j1fFjWHCI9KJSwcuYAOyF?si=f97bbce685374cec"
+            },
+            {
+                "title": "Dynamite",
+                "album": "BE",
+                "cover":"img/covers/bts/dyn.jpg",
+                "spotify":"https://open.spotify.com/track/5QDLhrAOJJdNAmCTJ8xMyW?si=5c3f483efe234436"
+            },
+            {
+                "title": "Blood, Sweat & Tears",
+                "album": "WINGS",
+                "cover":"img/covers/bts/bst.jpg",
+                "spotify":"https://open.spotify.com/track/2u54HNQamwFuOMLSuhSRom?si=68059f567d3344c1"
+            }
+        ]
+    },
+    "blackpink": {
+        "name": "Blackpink",
+        "image": "img/bp.jpg",
+        "debut": "August 8th 2016",
+        "members": "Jisoo, Jennie, Rose, Lisa",
+        "description": "A 4-member girl group known for their powerful performances, global popularity, and strong influence on modern Kpop.",
+        "songs": [
+            {
+                "title": "DDU-DU DDU-DU",
+                "album": "Square Up",
+                "cover":"img/covers/bp/ddudu.jpg",
+                "spotify":"https://open.spotify.com/track/69BIczdH6QMnFx7dsSssN8?si=479229982c8941ea"
+            },
+            {
+                "title": "How You Like That",
+                "album": "The Album",
+                "cover":"img/covers/bp/hylt.jpg",
+                "spotify":"https://open.spotify.com/track/6bvZRLLkBKkmgpBJTTj3QK?si=f39ba650e8864e76"
+            },
+            {
+                "title": "Kill This Love",
+                "album": "Kill This Love",
+                "cover":"img/covers/bp/ktl.jpg",
+                "spotify":"https://open.spotify.com/track/5GK7eDDTVz7CTge1wJrDQW?si=d58815c725dd42d9"
+            }
+        ]
+    },
+    "twice": {
+        "name": "Twice",
+        "image": "img/twice.jpg",
+        "debut": "October 20th 2015",
+        "members": "Nayeon, Jeongyeon, Momo, Sana, Jihyo, Mina, Dahyun, Chaeyoung, Tzuyu",
+        "description": "A girl group known for their bright concepts, catchy hits, and strong popularity across Asia and beyond.",
+        "songs": [
+            {
+                "title": "Cheer Up",
+                "album": "Page Two",
+                "cover":"img/covers/twice/cheer.jpg",
+                "spotify":"https://open.spotify.com/track/7lB4rxNVc7vm33ZSZXVRAQ?si=b1a15a8549d24e13"
+            },
+            {
+                "title": "Fancy",
+                "album": "Fancy You",
+                "cover":"img/covers/twice/fancy.jpg",
+                "spotify":"https://open.spotify.com/track/2qQpFbqqkLOGySgNK8wBXt?si=3597984a527f4c49"
+            },
+            {
+                "title": "What Is Love?",
+                "album": "What Is Love?",
+                "cover":"img/covers/twice/wil.jpg",
+                "spotify":"https://open.spotify.com/track/3zhbXKFjUDw40pTYyCgt1Y?si=71eb602aa7674025"
+            }
+        ]
+    },
+    "skz": {
+        "name": "Stray Kids",
+        "image": "img/skz.jpg",
+        "debut": "March 25th 2018",
+        "members": "Bang Chan, Lee Know, Changbin, Hyunjin, HAN, Felix, Seungmin, I.N",
+        "description": "An 8-member boy group known for their self-produced music, powerful performances, and distinctive blend of hiphop, EDM, and rock influences.",
+        "songs": [
+            {
+                "title": "God's Menu",
+                "album": "GO",
+                "cover":"img/covers/skz/go.jpg",
+                "spotify":"https://open.spotify.com/track/4XPXrcpyNr30Km6aPiflJy?si=00e26543709147fa"
+            },
+            {
+                "title": "MANIAC",
+                "album": "ODDINARY",
+                "cover":"img/covers/skz/odd.jpg",
+                "spotify":"https://open.spotify.com/track/63irPUP3xB74fHdw1Aw9zR?si=e6cea33c878c4fc9"
+            },
+            {
+                "title": "Thunderous",
+                "album": "NOEASY",
+                "cover":"img/covers/skz/noeasy.jpg",
+                "spotify":"https://open.spotify.com/track/0nwTMzpatarzvLvtwwzdCt?si=c1ae5e215c424423"
+            }
+        ]
+    },
+    "itzy": {
+        "name": "Itzy",
+        "image": "img/itzy.jpg",
+        "debut": "February 12th 2019",
+        "members": "Yeji, Lia, Ryujin, Chaeryong, Yuna",
+        "description": "A prominent fourth-generation act recognized for their performance-focused approach and youthful image.",
+        "songs": [
+            {
+                "title": "DALLA DALLA",
+                "album": "IT'z Different",
+                "cover":"img/covers/itzy/diff.jpg",
+                "spotify":"https://open.spotify.com/track/38rUIlTX93Aoif3WcY1wv6?si=cff45a3abb20443e"
+            },
+            {
+                "title": "WANNABE",
+                "album": "IT'z ME",
+                "cover":"img/covers/itzy/me.jpg",
+                "spotify":"https://open.spotify.com/track/4pspYVQGFHLPEFgQPD1J7e?si=ed705bc425d94280"
+            },
+            {
+                "title": "LOCO",
+                "album": "CRAZY IN LOVE",
+                "cover":"img/covers/itzy/loco.jpg",
+                "spotify":"https://open.spotify.com/track/56Yxkm62GtEpnPyG7TvwLY?si=689412c728df457a"
+            }
+        ]
+    },
+    "ive": {
+        "name": "ive",
+        "image": "img/ive.jpg",
+        "debut": "December 1st 2021",
+        "members": "An Yujin, Gaeul, Rei, Jang Wonyoung, Liz, Leeseo",
+        "description": "A 6-member girl group that quickly emerged as one of the leading acts of Kpop's fourth generation through as series of successful release.",
+        "songs": [
+            {
+                "title": "LOVE DIVE",
+                "album": "LOVE DIVE",
+                "cover":"img/covers/ive/eldi.jpg",
+                "spotify":"https://open.spotify.com/track/0Q5VnK2DYzRyfqQRJuUtvi?si=4f273f210fea47f7"
+            },
+            {
+                "title": "I AM",
+                "album": "I've IVE",
+                "cover":"img/covers/ive/ive.jpg",
+                "spotify":"https://open.spotify.com/track/2gYj9lubBorOPIVWsTXugG?si=4f75b37bf4e046ea"
+            },
+            {
+                "title": "After LIKE",
+                "album": "After LIKE",
+                "cover":"img/covers/ive/aflik.png",
+                "spotify":"https://open.spotify.com/track/70t7Q6AYG6ZgTYmJWcnkUM?si=a72beb5bfaab43e7"
+            }
+        ]
+    },
+    "zb1": {
+        "name": "Zerobaseone",
+        "image": "img/zb1.jpg",
+        "debut": "July 10th 2023",
+        "members": "Sung Hanbin, Kim Jiwoong, Seok Matthew, Kim Taerae, Park Gunwook",
+        "description": "A boy group formed through Boys Planet that quickly established itself as one of the leading acts of Kpop's fifth generation.",
+        "songs": [
+            {
+                "title": "In Bloom",
+                "album": "YOUTH IN THE SHADE",
+                "cover":"img/covers/zb1/yits.jpg",
+                "spotify":"https://open.spotify.com/track/3F4lHPNHlvr3RpO4tpVOIs?si=4d0ad9ebc85b4a3a"
+            },
+            {
+                "title": "Crush",
+                "album": "MELTING POINT",
+                "cover":"img/covers/zb1/empe.jpg",
+                "spotify":"https://open.spotify.com/track/2qiWQf7ka0C4XoA7JAZ1q5?si=8bdea2d8afd54576"
+            },
+            {
+                "title": "Feel the POP",
+                "album": "You had me at HELLO",
+                "cover":"img/covers/zb1/yhmah.jpg",
+                "spotify":"https://open.spotify.com/track/3JnaRKReO6TFGEdhggFWZG?si=b46a56c117a44a15"
+            }
+        ]
+    },
+    "illit": {
+        "name": "Illit",
+        "image": "img/illit.jpg",
+        "debut": "March 25th 2024",
+        "members": "Yunah, Minju, Moka, Wonhee, Iroha",
+        "description": "A 5-member girl group formed through R U Next? that gained rapid attention for their fresh image and strong debut success.",
+        "songs": [
+            {
+                "title": "Magnetic",
+                "album": "SUPER REAL ME",
+                "cover":"img/covers/illit/srm.jpg",
+                "spotify":"https://open.spotify.com/track/1aKvZDoLGkNMxoRYgkckZG?si=e0909f6d051b44e1"
+            },
+            {
+                "title": "Cherish (My Love)",
+                "album": "I'LL LIKE YOU",
+                "cover":"img/covers/illit/ilikeu.jpg",
+                "spotify":"https://open.spotify.com/track/2MoUuJhpSO4a0czxvsrSC6?si=74af38ed838d451e"
+            },
+            {
+                "title": "Tick-Tack",
+                "album": "I'LL LIKE YOU",
+                "cover":"img/covers/illit/ilikeu.jpg",
+                "spotify":"https://open.spotify.com/track/0znsc67nMhP4X9hjhvoyeP?si=1c91c70e68e34187"
+            }
+        ]
+    },
+    "bm": {
+        "name": "Babymonster",
+        "image": "img/baemon.jpg",
+        "debut": "April 1st 2024",
+        "members": "Ruka, Pharita, Asa, Ahyeon, Rami, Rora, Chiquita",
+        "description": "A girl group under YG Entertainment that emerged as a prominent fifth-generation ac with strong vocal, rap, and performance abilities.",
+        "songs": [
+            {
+                "title": "SHEESH",
+                "album": "BABYMONSTER",
+                "cover":"img/covers/baemon/syish.jpg",
+                "spotify":"https://open.spotify.com/track/1njlnn8ZKHI77Pe9szIONR?si=39660fae85104e9d"
+            },
+            {
+                "title": "DRIP",
+                "album": "DRIP",
+                "cover":"img/covers/baemon/drip.jpg",
+                "spotify":"https://open.spotify.com/track/198zDKzyktXRG1PGpidY9h?si=314f26024c1f4b83"
+            },
+            {
+                "title": "FOREVER",
+                "album": "FOREVER",
+                "cover":"img/covers/baemon/4ever.jpg",
+                "spotify":"https://open.spotify.com/track/0Md02V4hwKO5Vu5B7GD8tQ?si=7e7c9561daf44f88"
+            }
+        ]
+    }
+}
