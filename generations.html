@@ -9,27 +9,31 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <style>
-        .generation:nth-of-type(1){
+        #Gen1{
             --accent: #9c6fe0;
             --accent-bg:#9c6fe015;
         }
-        .generation:nth-of-type(2){
+        #Gen2{
             --accent: #f472b6;
             --accent-bg:#f472b615;
         }
-        .generation:nth-of-type(3){
+        #Gen3{
             --accent: #ff2f6e;
             --accent-bg:#ff2f6e15;
         }
-        .generation:nth-of-type(4){
+        #Gen4{
             --accent: #60a5fa;
             --accent-bg:#60a5fa15;
         }
-        .generation:nth-of-type(5){
+        #Gen5{
             --accent: #34d399;
             --accent-bg:#34d39915;
         }
         
+        body{
+            background-color: #fff;
+        }
+
         .genrs a {
             text-decoration: none;
             color: #555;
@@ -330,6 +334,10 @@
             gap:1.5rem;
         }
         
+        .all{
+            background-color: #0a0a0a;
+        }
+
     @media (max-width: 992px){
 
         .generation{
@@ -521,35 +529,35 @@
 </head>
 
 <body>
-    <nav class="main-nav">
-        <a href="index.html" class="title">KJOURNAL<span id="dot">.</span></a>
-        <i class="fa-solid fa-bars menu-toggle"></i>
-        <div class="nav-links">
-            <a href="index.html" class="navbut">HOME</a>
-            <a href="history.html" class="navbut">HISTORY</a>
-            <a href="generations.html" class="navbut">GENERATIONS</a>
-            <a href="culture.html" class="navbut">CULTURE</a>
-            <a href="quiz.html" class="navbut">QUIZ</a>
-        </div>
-        <a href="history.html" class="explore-btn">Explore</a>
-    </nav>
-    <nav class="gennav">
-        <div class="genrs">
-            <a href="#Gen1">GEN 1 — PIONEERS </a>
-        </div>
-        <div class="genrs">
-            <a href="#Gen2">GEN 2 — IDOL ERA </a>
-        </div>
-        <div class="genrs">
-            <a href="#Gen3">GEN 3 — GLOBAL </a>
-        </div>
-        <div class="genrs">
-            <a href="#Gen4">GEN 4 — DARK WAVE </a>
-        </div>
-        <div class="genrs">
-            <a href="#Gen5">GEN 5 — NEW WAVE </a>
-        </div>
-    </nav>
+        <nav class="main-nav">
+            <a href="index.html" class="title">KJOURNAL<span id="dot">.</span></a>
+            <i class="fa-solid fa-bars menu-toggle"></i>
+            <div class="nav-links">
+                <a href="index.html" class="navbut">HOME</a>
+                <a href="history.html" class="navbut">HISTORY</a>
+                <a href="generations.html" class="navbut active-nav">GENERATIONS</a>
+                <a href="culture.html" class="navbut">CULTURE</a>
+                <a href="quiz.html" class="navbut">QUIZ</a>
+            </div>
+            <a href="history.html" class="explore-btn">Explore</a>
+        </nav>
+        <nav class="gennav">
+            <div class="genrs">
+                <a href="#Gen1">GEN 1 — PIONEERS </a>
+            </div>
+            <div class="genrs">
+                <a href="#Gen2">GEN 2 — IDOL ERA </a>
+            </div>
+            <div class="genrs">
+                <a href="#Gen3">GEN 3 — GLOBAL </a>
+            </div>
+            <div class="genrs">
+                <a href="#Gen4">GEN 4 — DARK WAVE </a>
+            </div>
+            <div class="genrs">
+                <a href="#Gen5">GEN 5 — NEW WAVE </a>
+            </div>
+        </nav>
     <section class="subpage-hero">
         <div class="hist-hero-content">
             <p class="subpage-eyebrow">TIMELINE · 1992 — PRESENT</p>
@@ -565,262 +573,264 @@
             <span>GEN 5</span>
         </div>
     </section>
-    <div class="generation" id="Gen1">
-        <div class="left">
-            <p class="genr-label">1ST GENERATION · 1992-2002</p>
-            <h1>Where It All Began.</h1>
-            <p class="explanation">Before the global stage, before the fandom culture, before the stadiums — there was a small corner of Seoul. The first generation of K-pop artists built the entire industry from the ground up, inventing the idol system and proving Korean pop music could stand on its own terms.</p>
-            <span class="labs">
-                <p>STB</p>
-                <p>BOA</p>
-                <p>S.E.S</p>
-            </span>
-        </div>
-        <div class="right">
-            <div class="top-def">
-                <h1>Top 3 Groups of Gen 1</h1>
-                <p>Every generations have their own "superhero". In the first generations, these three are the "heroes".</p>
+    <div class="all">
+        <div class="generation" id="Gen1">
+            <div class="left">
+                <p class="genr-label">1ST GENERATION · 1992-2002</p>
+                <h1>Where It All Began.</h1>
+                <p class="explanation">Before the global stage, before the fandom culture, before the stadiums — there was a small corner of Seoul. The first generation of K-pop artists built the entire industry from the ground up, inventing the idol system and proving Korean pop music could stand on its own terms.</p>
+                <span class="labs">
+                    <p>STB</p>
+                    <p>BOA</p>
+                    <p>S.E.S</p>
+                </span>
             </div>
-            <div class="groups-index">
-                <div class="group-card" data-group="stb">
-                    <div class="logo">
-                        <img src="img/gr-logos/stb.jpg" alt="">
-                    </div>
-                    <div class="namas">
-                        <p>Seo Taiji and Boys</p>
-                        <p>서태지와 아이들 · 3 Members · 1992</p>
-                    </div>
-                    <div class="bels">
-                        <p>IVY</p>
-                    </div>
+            <div class="right">
+                <div class="top-def">
+                    <h1>Top 3 Groups of Gen 1</h1>
+                    <p>Every generations have their own "superhero". In the first generations, these three are the "heroes".</p>
                 </div>
-                <div class="group-card" data-group="boa">
-                    <div class="logo"><img src="img/gr-logos/boa.jpg" ></div>
-                    <div class="namas">
-                        <p>BoA</p>
-                        <p>권보아 · Soloist · 2000</p>
+                <div class="groups-index">
+                    <div class="group-card" data-group="stb">
+                        <div class="logo">
+                            <img src="img/gr-logos/stb.jpg" alt="">
+                        </div>
+                        <div class="namas">
+                            <p>Seo Taiji and Boys</p>
+                            <p>서태지와 아이들 · 3 Members · 1992</p>
+                        </div>
+                        <div class="bels">
+                            <p>IVY</p>
+                        </div>
                     </div>
-                    <div class="bels">
-                        <p>Jumping BoA</p>
+                    <div class="group-card" data-group="boa">
+                        <div class="logo"><img src="img/gr-logos/boa.jpg" ></div>
+                        <div class="namas">
+                            <p>BoA</p>
+                            <p>권보아 · Soloist · 2000</p>
+                        </div>
+                        <div class="bels">
+                            <p>Jumping BoA</p>
+                        </div>
                     </div>
-                </div>
-                <div class="group-card" data-group="ses">
-                    <div class="logo"><img src="img/gr-logos/ses.jpg" ></div>
-                    <div class="namas">
-                        <p>S.E.S</p>
-                        <p>에스이에스 · 3 Members · 1997</p>
-                    </div>
-                    <div class="bels">
-                        <p>Friend</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-    </div>
-    <div class="generation" id="Gen2">
-        <div class="left">
-            <p class="genr-label">2ND GENERATION · 2003-2012</p>
-            <h1>The Idol Era Rises.</h1>
-            <p class="explanation">Polished choreography, structured training systems, and the birth of organized fandom culture. The second generation refined the K-pop formula to a science — and started the Hallyu Wave that would sweep across Asia and beyond.</p>
-            <span class="labs">
-                <p>TVXQ</p>
-                <p>SNSD</p>
-                <p>BIGBANG</p>
-            </span>
-        </div>
-        <div class="right">
-            <div class="top-def">
-                <h1>Top 3 Groups of Gen 2</h1>
-                <p>Every generations have their own "superhero". In the first generations, these three are the "heroes".</p>
-            </div>
-            <div class="groups-index">
-                <div class="group-card" data-group="tvxq">
-                    <div class="logo">
-                        <img src="img/gr-logos/tvxq.jpg" alt="">
-                    </div>
-                    <div class="namas">
-                        <p>TVXQ</p>
-                        <p>동방신기 · 2 Members · 2003</p>
-                    </div>
-                    <div class="bels">
-                        <p>Cassiopeia</p>
-                    </div>
-                </div>
-                <div class="group-card" data-group="snsd">
-                    <div class="logo"><img src="img/gr-logos/snsd logo.jpg" ></div>
-                    <div class="namas">
-                        <p>SNSD</p>
-                        <p>소녀시대 · 9 Members · 2007</p>
-                    </div>
-                    <div class="bels">
-                        <p>Sone</p>
-                    </div>
-                </div>
-                <div class="group-card" data-group="bigbang">
-                    <div class="logo"><img src="img/gr-logos/bigbang.jpg" ></div>
-                    <div class="namas">
-                        <p>BIGBANG</p>
-                        <p>빅뱅 · 5 members · 2006</p>
-                    </div>
-                    <div class="bels">
-                        <p>VIP</p>
+                    <div class="group-card" data-group="ses">
+                        <div class="logo"><img src="img/gr-logos/ses.jpg" ></div>
+                        <div class="namas">
+                            <p>S.E.S</p>
+                            <p>에스이에스 · 3 Members · 1997</p>
+                        </div>
+                        <div class="bels">
+                            <p>Friend</p>
+                        </div>
                     </div>
                 </div>
             </div>
+            
         </div>
-    </div>
-    <div class="generation" id="Gen3">
-        <div class="left">
-            <p class="genr-label">3RD GENERATION · 2013-2017</p>
-            <h1>They Broke The Internet.</h1>
-            <p class="explanation">BTS. BLACKPINK. TWICE. The third generation didn't just expand K-pop's reach — they made it truly global. Social media, YouTube, and a new generation of devoted fans worldwide turned these groups into a cultural phenomenon unlike anything before them.</p>
-            <span class="labs">
-                <p>BTS</p>
-                <p>BLACKPINK</p>
-                <p>TWICE</p>
-            </span>
-        </div>
-        <div class="right">
-            <div class="top-def">
-                <h1>Top 3 Groups of Gen 3</h1>
-                <p>Every generations have their own "superhero". In the first generations, these three are the "heroes".</p>
+        <div class="generation" id="Gen2">
+            <div class="left">
+                <p class="genr-label">2ND GENERATION · 2003-2012</p>
+                <h1>The Idol Era Rises.</h1>
+                <p class="explanation">Polished choreography, structured training systems, and the birth of organized fandom culture. The second generation refined the K-pop formula to a science — and started the Hallyu Wave that would sweep across Asia and beyond.</p>
+                <span class="labs">
+                    <p>TVXQ</p>
+                    <p>SNSD</p>
+                    <p>BIGBANG</p>
+                </span>
             </div>
-            <div class="groups-index">
-                <div class="group-card" data-group="bts">
-                    <div class="logo">
-                        <img src="img/gr-logos/bts.jpg" alt="">
-                    </div>
-                    <div class="namas">
-                        <p>BTS</p>
-                        <p>방탄소년단 · 7 Members · 2013</p>
-                    </div>
-                    <div class="bels">
-                        <p>Army</p>
-                    </div>
+            <div class="right">
+                <div class="top-def">
+                    <h1>Top 3 Groups of Gen 2</h1>
+                    <p>Every generations have their own "superhero". In the first generations, these three are the "heroes".</p>
                 </div>
-                <div class="group-card" data-group="blackpink">
-                    <div class="logo"><img src="img/gr-logos/bp.jpg" ></div>
-                    <div class="namas">
-                        <p>Blackpink</p>
-                        <p>블랙핑크 · 4 Members · 2016</p>
+                <div class="groups-index">
+                    <div class="group-card" data-group="tvxq">
+                        <div class="logo">
+                            <img src="img/gr-logos/tvxq.jpg" alt="">
+                        </div>
+                        <div class="namas">
+                            <p>TVXQ</p>
+                            <p>동방신기 · 2 Members · 2003</p>
+                        </div>
+                        <div class="bels">
+                            <p>Cassiopeia</p>
+                        </div>
                     </div>
-                    <div class="bels">
-                        <p>Blink</p>
+                    <div class="group-card" data-group="snsd">
+                        <div class="logo"><img src="img/gr-logos/snsd logo.jpg" ></div>
+                        <div class="namas">
+                            <p>SNSD</p>
+                            <p>소녀시대 · 9 Members · 2007</p>
+                        </div>
+                        <div class="bels">
+                            <p>Sone</p>
+                        </div>
                     </div>
-                </div>
-                <div class="group-card" data-group="twice">
-                    <div class="logo"><img src="img/gr-logos/twice.jpg" ></div>
-                    <div class="namas">
-                        <p>TWICE</p>
-                        <p>트와이스 · 9 members · 2015</p>
-                    </div>
-                    <div class="bels">
-                        <p>Once</p>
+                    <div class="group-card" data-group="bigbang">
+                        <div class="logo"><img src="img/gr-logos/bigbang.jpg" ></div>
+                        <div class="namas">
+                            <p>BIGBANG</p>
+                            <p>빅뱅 · 5 members · 2006</p>
+                        </div>
+                        <div class="bels">
+                            <p>VIP</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="generation" id="Gen4">
-        <div class="left">
-            <p class="genr-label">4TH GENERATION · 2018-2022</p>
-            <h1>Darker. Bolder.</h1>
-            <p class="explanation">Concept-heavy, performance-driven, and unapologetically experimental. The fourth generation redefined what an idol could be — more self-expressed, more genre-fluid, and less willing to conform to the polished templates of their predecessors.</p>
-            <span class="labs">
-                <p>SKZ</p>
-                <p>ITZY</p>
-                <p>IVE</p>
-            </span>
-        </div>
-        <div class="right">
-            <div class="top-def">
-                <h1>Top 3 Groups of Gen 4</h1>
-                <p>Every generations have their own "superhero". In the fourth generations, these three are the "heroes".</p>
+        <div class="generation" id="Gen3">
+            <div class="left">
+                <p class="genr-label">3RD GENERATION · 2013-2017</p>
+                <h1>They Broke The Internet.</h1>
+                <p class="explanation">BTS. BLACKPINK. TWICE. The third generation didn't just expand K-pop's reach — they made it truly global. Social media, YouTube, and a new generation of devoted fans worldwide turned these groups into a cultural phenomenon unlike anything before them.</p>
+                <span class="labs">
+                    <p>BTS</p>
+                    <p>BLACKPINK</p>
+                    <p>TWICE</p>
+                </span>
             </div>
-            <div class="groups-index">
-                <div class="group-card" data-group="skz">
-                    <div class="logo">
-                        <img src="img/gr-logos/stray kids logo_.jpg" alt="">
-                    </div>
-                    <div class="namas">
-                        <p>Stray Kids</p>
-                        <p>스트레이 키즈 · 8 Members · 2018</p>
-                    </div>
-                    <div class="bels">
-                        <p>Stay</p>
-                    </div>
+            <div class="right">
+                <div class="top-def">
+                    <h1>Top 3 Groups of Gen 3</h1>
+                    <p>Every generations have their own "superhero". In the first generations, these three are the "heroes".</p>
                 </div>
-                <div class="group-card" data-group="itzy">
-                    <div class="logo"><img src="img/gr-logos/itzy.jpg" ></div>
-                    <div class="namas">
-                        <p>Itzy</p>
-                        <p>있지 · 5 Members · 2019</p>
+                <div class="groups-index">
+                    <div class="group-card" data-group="bts">
+                        <div class="logo">
+                            <img src="img/gr-logos/bts.jpg" alt="">
+                        </div>
+                        <div class="namas">
+                            <p>BTS</p>
+                            <p>방탄소년단 · 7 Members · 2013</p>
+                        </div>
+                        <div class="bels">
+                            <p>Army</p>
+                        </div>
                     </div>
-                    <div class="bels">
-                        <p>Midzy</p>
+                    <div class="group-card" data-group="blackpink">
+                        <div class="logo"><img src="img/gr-logos/bp.jpg" ></div>
+                        <div class="namas">
+                            <p>Blackpink</p>
+                            <p>블랙핑크 · 4 Members · 2016</p>
+                        </div>
+                        <div class="bels">
+                            <p>Blink</p>
+                        </div>
                     </div>
-                </div>
-                <div class="group-card" data-group="ive">
-                    <div class="logo"><img src="img/gr-logos/ive.jpg" ></div>
-                    <div class="namas">
-                        <p>IVE</p>
-                        <p>트와이스 · 6 members · 2021</p>
-                    </div>
-                    <div class="bels">
-                        <p>Dive</p>
+                    <div class="group-card" data-group="twice">
+                        <div class="logo"><img src="img/gr-logos/twice.jpg" ></div>
+                        <div class="namas">
+                            <p>TWICE</p>
+                            <p>트와이스 · 9 members · 2015</p>
+                        </div>
+                        <div class="bels">
+                            <p>Once</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="generation" id="Gen5">
-        <div class="left">
-            <p class="genr-label">5TH GENERATION · 2023-PRESENT</p>
-            <h1>The new wave.</h1>
-            <p class="explanation">Post-pandemic, post-algorithm, post-genre. The fifth generation grew up watching their predecessors dominate the world — and they're writing a different story. Softer, more experimental, and less bound by the formulas that defined the generations before them.</p>
-            <span class="labs">
-                <p>ZB1</p>
-                <p>ILLIT</p>
-                <p>BM</p>
-            </span>
-        </div>
-        <div class="right">
-            <div class="top-def">
-                <h1>Top 3 Groups of Gen 5</h1>
-                <p>Every generations have their own "superhero". In the fifth generations, these three are the "heroes".</p>
+        <div class="generation" id="Gen4">
+            <div class="left">
+                <p class="genr-label">4TH GENERATION · 2018-2022</p>
+                <h1>Darker. Bolder.</h1>
+                <p class="explanation">Concept-heavy, performance-driven, and unapologetically experimental. The fourth generation redefined what an idol could be — more self-expressed, more genre-fluid, and less willing to conform to the polished templates of their predecessors.</p>
+                <span class="labs">
+                    <p>SKZ</p>
+                    <p>ITZY</p>
+                    <p>IVE</p>
+                </span>
             </div>
-            <div class="groups-index">
-                <div class="group-card" data-group="zb1">
-                    <div class="logo">
-                        <img src="img/gr-logos/ZB1.jpg" alt="">
+            <div class="right">
+                <div class="top-def">
+                    <h1>Top 3 Groups of Gen 4</h1>
+                    <p>Every generations have their own "superhero". In the fourth generations, these three are the "heroes".</p>
+                </div>
+                <div class="groups-index">
+                    <div class="group-card" data-group="skz">
+                        <div class="logo">
+                            <img src="img/gr-logos/stray kids logo_.jpg" alt="">
+                        </div>
+                        <div class="namas">
+                            <p>Stray Kids</p>
+                            <p>스트레이 키즈 · 8 Members · 2018</p>
+                        </div>
+                        <div class="bels">
+                            <p>Stay</p>
+                        </div>
                     </div>
-                    <div class="namas">
-                        <p>ZEROBASEONE (ZB1)</p>
-                        <p>제로베이스원 · 5 Members · 2023</p>
+                    <div class="group-card" data-group="itzy">
+                        <div class="logo"><img src="img/gr-logos/itzy.jpg" ></div>
+                        <div class="namas">
+                            <p>Itzy</p>
+                            <p>있지 · 5 Members · 2019</p>
+                        </div>
+                        <div class="bels">
+                            <p>Midzy</p>
+                        </div>
                     </div>
-                    <div class="bels">
-                        <p>Zerose</p>
+                    <div class="group-card" data-group="ive">
+                        <div class="logo"><img src="img/gr-logos/ive.jpg" ></div>
+                        <div class="namas">
+                            <p>IVE</p>
+                            <p>트와이스 · 6 members · 2021</p>
+                        </div>
+                        <div class="bels">
+                            <p>Dive</p>
+                        </div>
                     </div>
                 </div>
-                <div class="group-card" data-group="illit">
-                    <div class="logo"><img src="img/gr-logos/illit.jpg" ></div>
-                    <div class="namas">
-                        <p>ILLIT</p>
-                        <p>아일릿 · 5 Members · 2024</p>
-                    </div>
-                    <div class="bels">
-                        <p>Gllit</p>
-                    </div>
+            </div>
+        </div>
+        <div class="generation" id="Gen5">
+            <div class="left">
+                <p class="genr-label">5TH GENERATION · 2023-PRESENT</p>
+                <h1>The new wave.</h1>
+                <p class="explanation">Post-pandemic, post-algorithm, post-genre. The fifth generation grew up watching their predecessors dominate the world — and they're writing a different story. Softer, more experimental, and less bound by the formulas that defined the generations before them.</p>
+                <span class="labs">
+                    <p>ZB1</p>
+                    <p>ILLIT</p>
+                    <p>BM</p>
+                </span>
+            </div>
+            <div class="right">
+                <div class="top-def">
+                    <h1>Top 3 Groups of Gen 5</h1>
+                    <p>Every generations have their own "superhero". In the fifth generations, these three are the "heroes".</p>
                 </div>
-                <div class="group-card" data-group="bm">
-                    <div class="logo"><img src="img/gr-logos/bm.jpg" ></div>
-                    <div class="namas">
-                        <p>BABYMONSTER</p>
-                        <p>베이비몬스터 · 7 members · 2023</p>
+                <div class="groups-index">
+                    <div class="group-card" data-group="zb1">
+                        <div class="logo">
+                            <img src="img/gr-logos/ZB1.jpg" alt="">
+                        </div>
+                        <div class="namas">
+                            <p>ZEROBASEONE (ZB1)</p>
+                            <p>제로베이스원 · 5 Members · 2023</p>
+                        </div>
+                        <div class="bels">
+                            <p>Zerose</p>
+                        </div>
                     </div>
-                    <div class="bels">
-                        <p>Monstiez</p>
+                    <div class="group-card" data-group="illit">
+                        <div class="logo"><img src="img/gr-logos/illit.jpg" ></div>
+                        <div class="namas">
+                            <p>ILLIT</p>
+                            <p>아일릿 · 5 Members · 2024</p>
+                        </div>
+                        <div class="bels">
+                            <p>Gllit</p>
+                        </div>
+                    </div>
+                    <div class="group-card" data-group="bm">
+                        <div class="logo"><img src="img/gr-logos/bm.jpg" ></div>
+                        <div class="namas">
+                            <p>BABYMONSTER</p>
+                            <p>베이비몬스터 · 7 members · 2023</p>
+                        </div>
+                        <div class="bels">
+                            <p>Monstiez</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -863,6 +873,35 @@
         </div>
     </div>
 </div>
+
+<footer>
+        <div class="card1">
+            <div class="desc">
+                <h3>KJOURNAL<span id="dot">.</span></h3>
+                <p>Exploring the history and cultural impact of K-Pop across generations.</p>
+            </div>
+            <div class="page-directory">
+                <p>PAGES</p>
+                <a href="index.html">Home</a>
+                <a href="history.html">History</a>
+                <a href="generations.html">Generations</a>
+                <a href="culture.html">Culture</a>
+                <a href="quiz.html">Quiz</a>
+            </div>
+            <div class="about">
+                <p>ABOUT</p>
+                <a href="team.html">Our Team</a>
+                <a href="#">References</a>
+                <a href="https://github.com/natetamp/TugasBesar_2572005_2572007" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-bottom">
+            <p>&copy; 2026 KJOURNAL. — 2572005 / 2572007. All rights reserved.</p>
+            <p>Informatics Engineering - Web Dasar, Universitas Kristen Maranatha</p>
+        </div>
+    </footer>
+    
 <script>
 let groupsData = {};
 

@@ -1,23 +1,25 @@
 $(document).ready(function () {
     const $slides = $('.slides');
-    const $slideImages = $('.slides img');
+    const $images = $('.slides img');
 
-    if ($slideImages.length > 0) {
-        let currentSlide = 0;
-        const totalSlides = $slideImages.length;
+    let currentSlide = 0;
+    const totalSlides = $images.length;
 
-        $slides.css('width', `${totalSlides * 100}%`);
-        $slideImages.css('width', `${100 / totalSlides}%`);
+    function nextSlide() {
+        currentSlide++;
 
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            $slides.stop().animate({
-                'margin-left': `-${currentSlide * 100}%`
-            }, 800);
+        if (currentSlide >= totalSlides) {
+            currentSlide = 0;
         }
 
-        setInterval(nextSlide, 2500);
+        $slides.css(
+            'transform',
+            `translateX(-${currentSlide * 100}%)`
+        );
     }
+
+    setInterval(nextSlide, 5000);
+});
 
     const $stats = $('.cards-stat h3 span:first-child');
     let animated = false;
@@ -125,7 +127,6 @@ $(document).ready(function () {
         }
     });
 
-});
 
 if ($('.hist-count').length > 0) {
     $('.hist-count').each(function () {

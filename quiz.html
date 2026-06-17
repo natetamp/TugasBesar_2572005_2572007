@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KJOURNAL - Understand KPop Culture Here</title>
+    <link rel="icon" type="image/png" href="img/logo.png" class="logo-kj">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background: #f5f5f5;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container{
+            min-height: calc(100vh - 80px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .island{
+            width: 40rem;
+            min-height: 30rem;
+            background: #0a0a0a;
+            border-radius: 20px;
+            padding: 40px;
+            color: white;
+            box-shadow: 0 15px 40px rgba(0,0,0,.2);
+        }
+
+        .quiz-label{
+            color: #ff2f6e;
+            font-size: .9rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        #start-screen h1{
+            font-size: 3rem;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .quiz-desc{
+            color: #cfcfcf;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+
+        #start-btn,
+        #result-screen button{
+            padding: 14px 28px;
+            border: none;
+            border-radius: 10px;
+            background: #ff2f6e;
+            color: #0a0a0a;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        #start-btn:hover,
+        #result-screen button:hover{
+            transform: translateY(-3px);
+        }
+
+        .quizr{
+            display: none;
+        }
+
+        .result{
+            display: none;
+        }
+
+        #progress{
+            color: #ff2f6e;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        #question{
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        #answers{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .answer-btn{
+            background: #151515;
+            color: white;
+            border: 1px solid #222;
+            padding: 15px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 1rem;
+            transition: .25s;
+        }
+
+        .answer-btn:hover{
+            border-color: #ff2f6e;
+            transform: translateX(8px);
+        }
+
+
+        #result-screen{
+            text-align: center;
+        }
+
+        #result-title{
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        #result-desc{
+            color: #d0d0d0;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        @media screen and (max-width: 992px){
+
+            .container{
+                padding: 30px;
+            }
+
+            .island{
+                width: 100%;
+                max-width: 700px;
+                min-height: auto;
+                padding: 35px;
+            }
+
+            #start-screen h1{
+                font-size: 2.5rem;
+            }
+
+            #question{
+                font-size: 1.6rem;
+            }
+
+            .quiz-desc{
+                font-size: .95rem;
+            }
+
+            .answer-btn{
+                font-size: .95rem;
+            }
+
+            .card1{
+                grid-template-columns: repeat(2,1fr);
+                gap: 30px;
+            }
+        }
+    
+        @media screen and (max-width: 768px){
+
+
+            .menu-toggle{
+                display:block !important;
+            }
+
+            .nav-links{
+                display:none;
+                flex-direction:column;
+
+                position:absolute;
+                top:100%;
+                left:0;
+
+                width:100%;
+                padding:1rem;
+
+                background:#111;
+                border-top:1px solid #333;
+            }
+
+            .nav-links.active{
+                display:flex;
+            }
+
+            .explore-btn{
+                display:none;
+            }
+
+
+            .container{
+                padding: 20px 15px;
+                height: 5vh;
+            }
+
+            .island{
+                width: 100%;
+                padding: 25px;
+                border-radius: 15px;
+            }
+
+            #start-screen h1{
+                font-size: 2rem;
+            }
+
+            .quiz-desc{
+                font-size: .9rem;
+                line-height: 1.7;
+            }
+
+            #question{
+                font-size: 1.35rem;
+                line-height: 1.4;
+            }
+
+            .answer-btn{
+                font-size: .9rem;
+                padding: 14px;
+            }
+
+            #progress{
+                font-size: .85rem;
+            }
+
+            #result-title{
+                font-size: 2rem;
+            }
+
+            #result-desc{
+                font-size: .9rem;
+            }
+
+            .result{
+                display: none;
+            }
+
+            .result.show{
+                display:flex;
+                flex-direction:column;
+                gap:12px;
+            }
+
+            #learn-btn,
+            #result-screen button{
+                width:100%;
+            }
+
+            .card1{
+                grid-template-columns:1fr;
+                gap:25px;
+            }
+
+            .footer-bottom{
+                flex-direction:column;
+                text-align:center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="index.html" class="title">KJOURNAL<span id="dot">.</span></a>
+        <i class="fa-solid fa-bars menu-toggle"></i>
+        <div class="nav-links">
+            <a href="index.html" class="navbut">HOME</a>
+            <a href="history.html" class="navbut">HISTORY</a>
+            <a href="generations.html" class="navbut">GENERATIONS</a>
+            <a href="culture.html" class="navbut">CULTURE</a>
+            <a href="quiz.html" class="navbut active-nav">QUIZ</a>
+        </div>
+        <a href="history.html" class="explore-btn">Explore</a>
+    </nav>
+    <div class="container">
+        <div class="island">
+            <div id="start-screen">
+                <p class="quiz-label">KPOP PERSONALITY QUIZ</p>
+                <h1>WHICH GEN ARE YOU?</h1>
+                <p class="quiz-desc">Five generations. Five completely different sounds,aesthetics, and vibes. Answer 10 questions honestly and we'll tell you exactly which K-pop era you belong to.</p>
+                <button id="start-btn">START QUIZ</button>
+            </div>
+            <div id="quiz-screen" class="quizr">
+                <p id="progress"></p>
+                <h2 id="question"></h2>
+                <div id="answers"></div>
+            </div>
+            <div id="result-screen" class="result">
+                <h1 id="result-title"></h1>
+                <p id="result-desc"></p>
+                <button id="learn-btn">Learn About Your Generation</button>
+                <button onclick="location.reload()">TRY AGAIN</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="card1">
+            <div class="desc">
+                <h3>KJOURNAL<span id="dot">.</span></h3>
+                <p>Exploring the history and cultural impact of K-Pop across generations.</p>
+            </div>
+            <div class="page-directory">
+                <p>PAGES</p>
+                <a href="index.html">Home</a>
+                <a href="history.html">History</a>
+                <a href="generations.html">Generations</a>
+                <a href="culture.html">Culture</a>
+                <a href="quiz.html">Quiz</a>
+            </div>
+            <div class="about">
+                <p>ABOUT</p>
+                <a href="team.html">Our Team</a>
+                <a href="#">References</a>
+                <a href="https://github.com/natetamp/TugasBesar_2572005_2572007" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-bottom">
+            <p>&copy; 2026 KJOURNAL. — 2572005 / 2572007. All rights reserved.</p>
+            <p>Informatics Engineering - Web Dasar, Universitas Kristen Maranatha</p>
+        </div>
+    </footer>
+    
+<script>
+const questions = [
+{
+    question: "What matters most in Kpop?",
+    answers: [
+        { text: "Originality", gen: "gen1" },
+        { text: "Iconic songs", gen: "gen2" },
+        { text: "Global impact", gen: "gen3" },
+        { text: "Performance", gen: "gen4" },
+        { text: "Fresh concepts", gen: "gen5" }
+    ]
+},
+{
+    question: "Choose a fashion style.",
+    answers: [
+        { text: "90s Streetwear", gen: "gen1" },
+        { text: "Colorful Idol Fashion", gen: "gen2" },
+        { text: "Luxury Brands", gen: "gen3" },
+        { text: "Y2K", gen: "gen4" },
+        { text: "Minimal Trendy", gen: "gen5" }
+    ]
+},
+{
+    question: "Pick a platform.",
+    answers: [
+        { text: "TV", gen: "gen1" },
+        { text: "MP3 Player", gen: "gen2" },
+        { text: "YouTube", gen: "gen3" },
+        { text: "TikTok", gen: "gen4" },
+        { text: "Livestream Apps", gen: "gen5" }
+    ]
+},
+{
+    question: "Choose a concert type.",
+    answers: [
+        { text: "Small Hall", gen: "gen1" },
+        { text: "Arena", gen: "gen2" },
+        { text: "Stadium", gen: "gen3" },
+        { text: "Festival", gen: "gen4" },
+        { text: "Hybrid Online Concert", gen: "gen5" }
+    ]
+},
+{
+    question: "What describes you best?",
+    answers: [
+        { text: "Creative", gen: "gen1" },
+        { text: "Charismatic", gen: "gen2" },
+        { text: "Passionate", gen: "gen3" },
+        { text: "Ambitious", gen: "gen4" },
+        { text: "Adaptable", gen: "gen5" }
+    ]
+}
+];
+
+const results = {
+    gen1:{
+        title:"Generation 1",
+        desc:"You value originality and creativity. Like the pioneers of Kpop, you prefer setting trends rather than following them.",
+        link:"generations.html#Gen1"
+    },
+    gen2:{
+        title:"Generation 2",
+        desc:"You love iconic songs, unforgettable concepts, and the era that helped Kpop expand across Asia.",
+        link:"generations.html#Gen2"
+    },
+    gen3:{
+        title:"Generation 3",
+        desc:"You thrive in fandom culture and appreciate the generation that brought Kpop to the global stage.",
+        link:"generations.html#Gen3"
+    },
+    gen4:{
+        title:"Generation 4",
+        desc:"You enjoy innovation, powerful performances, and constantly evolving trends.",
+        link:"generations.html#Gen4"
+    },
+    gen5:{
+        title:"Generation 5",
+        desc:"You're future-oriented, adaptable, and always excited for what's next in Kpop.",
+        link:"generations.html#Gen5"
+    }
+};
+
+let currentQuestion = 0;
+
+const score = {
+    gen1:0,
+    gen2:0,
+    gen3:0,
+    gen4:0,
+    gen5:0
+};
+
+const startBtn = document.getElementById("start-btn");
+
+startBtn.addEventListener("click", () => {
+    document.getElementById("start-screen").style.display = "none";
+    document.getElementById("quiz-screen").style.display = "block";
+
+    showQuestion();
+});
+
+function showQuestion(){
+
+    const q = questions[currentQuestion];
+
+    document.getElementById("progress").textContent =
+        `Question ${currentQuestion+1} of ${questions.length}`;
+
+    document.getElementById("question").textContent =
+        q.question;
+
+    const answers = document.getElementById("answers");
+
+    answers.innerHTML = "";
+
+    q.answers.forEach(answer => {
+
+        const btn = document.createElement("button");
+
+        btn.classList.add("answer-btn");
+
+        btn.textContent = answer.text;
+
+        btn.addEventListener("click", () => {
+
+            score[answer.gen]++;
+
+            currentQuestion++;
+
+            if(currentQuestion < questions.length){
+                showQuestion();
+            }
+            else{
+                showResult();
+            }
+
+        });
+
+        answers.appendChild(btn);
+
+    });
+}
+
+function showResult(){
+
+    document.getElementById("quiz-screen").style.display = "none";
+    document.getElementById("result-screen").style.display = "block";
+
+    const winner = Object.keys(score).reduce((a,b)=>
+        score[a] > score[b] ? a : b
+    );
+
+    document.getElementById("result-screen")
+    .classList.add("show");
+
+    document.getElementById("result-title").textContent =
+        results[winner].title;
+
+    document.getElementById("result-desc").textContent =
+        results[winner].desc;
+    document.getElementById("learn-btn").onclick = () => {
+        window.location.href = results[winner].link;
+    };
+}
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+</script>
+</body>
+</html>
