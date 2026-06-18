@@ -127,25 +127,6 @@ $(document).ready(function () {
         }
     });
 
-
-if ($('.hist-count').length > 0) {
-    $('.hist-count').each(function () {
-        const $this = $(this);
-        const target = parseInt($this.attr('data-target'));
-
-        $({ Counter: 0 }).animate({ Counter: target }, {
-            duration: 2000,
-            easing: 'swing',
-            step: function () {
-                $this.text(Math.ceil(this.Counter));
-            },
-            complete: function () {
-                $this.text(target);
-            }
-        });
-    });
-}
-
 $('.timeline-head').on('click', function () {
     const $item = $(this).closest('.timeline-item');
     const $body = $(this).next('.timeline-body');
