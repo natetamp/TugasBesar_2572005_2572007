@@ -38,7 +38,7 @@ nav { background: rgba(10,10,10,.9);backdrop-filter: blur(10px);-webkit-backdrop
 .subpage-stat-item h2 { color: #f5f5f5; font-size: 42px; letter-spacing: 1px; margin-bottom: 6px; }
 .subpage-stat-item p { color: #666; font-size: 13px; }
 
-.subpage-section-header { margin-bottom: 60px; }
+.subpage-section-header { padding-top:1rem;margin-bottom: 60px; }
 .subpage-section-label { color: #ff2f6e; font-size: 12px; font-weight: bold; letter-spacing: 3px; margin-bottom: 12px; }
 .subpage-section-header h2 { font-size: 44px; margin-bottom: 16px; color: #f5f5f5; letter-spacing: -0.5px; }
 .subpage-section-sub { font-size: 15px; color: #aaa; max-width: 700px; line-height: 1.6; }
@@ -98,11 +98,11 @@ nav { background: rgba(10,10,10,.9);backdrop-filter: blur(10px);-webkit-backdrop
 .spotlight-labels { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; }
 .spotlight-labels p { color: #aaa; font-size: 11px; padding: 5px 12px; margin: 0; background-color: #1a1a1a; border: 1px solid #2e2e2e; border-radius: 30px; transition: all 0.3s ease; }
 .spotlight-labels p:hover { box-shadow: 0 0 10px var(--clr); color: var(--clr); border-color: var(--clr); }
-.spotlight-card:nth-child(1) .spotlight-labels p { --clr: yellow; }
-.spotlight-card:nth-child(2) .spotlight-labels p { --clr: rgb(235, 160, 173); }
-.spotlight-card:nth-child(3) .spotlight-labels p { --clr: #9c6fe0; }
-.spotlight-card:nth-child(4) .spotlight-labels p { --clr: rgb(247, 66, 66); }
-.spotlight-card:nth-child(5) .spotlight-labels p { --clr: rgb(77, 77, 233); }
+.spotlight-card:nth-child(1) .spotlight-labels p { --clr: #9c6fe0; }
+.spotlight-card:nth-child(2) .spotlight-labels p { --clr: #f472b6; }
+.spotlight-card:nth-child(3) .spotlight-labels p { --clr: #ff2f6e; }
+.spotlight-card:nth-child(4) .spotlight-labels p { --clr: #60a5fa; }
+.spotlight-card:nth-child(5) .spotlight-labels p { --clr: #34d399; }
 .bts-btn { align-self: flex-start; font-size: 14px; text-decoration: none; color: #f5f5f5; background-color: #008cff; padding: 10px 25px; border-radius: 6px; font-weight: bold; transition: background-color 0.3s, box-shadow 0.3s; }
 .bts-btn:hover { background-color: #0076d6; box-shadow: 0 5px 15px rgba(0, 140, 255, 0.4); color: #f5f5f5; }
 .quiz-teaser { background-color: #0a0a0a; padding: 80px 5%; border-bottom: 1px solid #2e2e2e; }
@@ -147,12 +147,12 @@ nav { background: rgba(10,10,10,.9);backdrop-filter: blur(10px);-webkit-backdrop
 .tl-key-acts li { font-size: 13px; color: #ccc; background-color: #1a1a1a; padding: 6px 14px; border-radius: 20px; border: 1px solid #2e2e2e; }
 .tl-milestone { margin-top: 20px; font-size: 13px; color: #f5f5f5; background-color: rgba(255, 47, 110, 0.05); border-left: 3px solid #ff2f6e; padding: 12px 20px; border-radius: 0 6px 6px 0; }
 
-.cult-tabs-section { padding: 40px 5% 0 5%; background-color: #121212; text-align: center; }
-.cult-tabs { display: inline-flex; gap: 10px; background-color: #0a0a0a; padding: 6px; border-radius: 30px; border: 1px solid #2e2e2e; margin-bottom: 40px; }
+.cult-tabs-section { display: flex; flex-direction: column; gap:20px; padding: 40px 5% 0 5%; background-color: #121212; text-align: center; }
+.cult-tabs { display: inline-flex; gap: 10px; background-color: #0a0a0a; padding: 6px; border-radius: 30px; border: 1px solid #2e2e2e; margin-bottom: 0; }
 .cult-tab { background: none; border: none; color: #666; padding: 10px 24px; border-radius: 25px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
 .cult-tab:hover { color: #aaa; }
 .cult-tab.active { background-color: #ff2f6e; color: #f5f5f5; }
-.cult-content-section { padding: 0 5% 80px 5%; background-color: #121212; }
+.cult-content-section {padding: 0 5% 80px 5%; background-color: #121212; }
 .cult-panel { display: none; }
 .cult-panel.active { display: block; }
 .cult-chant-box { margin-top: 60px; background-color: #0a0a0a; border: 1px solid #2e2e2e; border-radius: 12px; padding: 40px; }
@@ -194,7 +194,7 @@ footer hr { border-color: #2e2e2e; margin-bottom: 30px; opacity: 0.5; }
 }
 
 @media screen and (max-width: 768px) {
-    .hero{height:50%}
+    .hero{height:50vh; width: 60rem;}
     .main-nav { flex-direction: row; position: sticky; gap: 1rem; padding: 1rem; height: 5rem; }
     .navbut { margin: 0 8px; font-size: 11px; }
     .section2 { grid-template-columns: 1fr; padding: 40px 5%; gap: 30px; }
@@ -220,8 +220,8 @@ footer hr { border-color: #2e2e2e; margin-bottom: 30px; opacity: 0.5; }
     .cult-tabs {
         display: flex;
         overflow-x:auto;
-        white-space:nowrap;
-        gap: 0.7rem;
+        white-space:wrap;
+        gap: 0;
         -webkit-overflow-scrolling: touch;
     }
 }
