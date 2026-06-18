@@ -210,19 +210,9 @@ footer hr { border-color: #2e2e2e; margin-bottom: 30px; opacity: 0.5; }
     .nav-links.active { display: flex; }
     .explore-btn { display: none; }
     .cult-tabs {display: flex;overflow-x:auto;white-space:wrap;gap: 0;-webkit-overflow-scrolling: touch;}
-    .spotlight-cards-container {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
-    }
+    .spotlight-cards-container {display: flex;overflow-x: auto;scroll-snap-type: x mandatory;scroll-behavior: smooth;-webkit-overflow-scrolling: touch;}
 
-    .spotlight-card {
-        flex: 0 0 85%;
-        scroll-snap-align: start;
-        margin-right: 0.8rem;
-    }
+    .spotlight-card {flex: 0 0 85%;scroll-snap-align: start;margin-right: 0.8rem;}
 
     .spotlight-card img {
         height: 300px;
