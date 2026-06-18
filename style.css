@@ -222,6 +222,9 @@ footer hr { border-color: #2e2e2e; margin-bottom: 30px; opacity: 0.5; }
         flex: 0 0 100%;
         scroll-snap-align: start;
         margin-right: 0.8rem;
+    }
+
+    .spotlight-card img {
         height: 300px;
     }
 
