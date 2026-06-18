@@ -219,7 +219,7 @@ footer hr { border-color: #2e2e2e; margin-bottom: 30px; opacity: 0.5; }
     }
 
     .spotlight-card {
-        flex: 0 0 100%;
+        flex: 0 0 85%;
         scroll-snap-align: start;
         margin-right: 0.8rem;
     }
