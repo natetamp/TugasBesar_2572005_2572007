@@ -54,42 +54,6 @@ $(document).ready(function () {
         }
     });
 
-    const $backToTopBtn = $('<button class="back-to-top">↑</button>').css({
-        'position': 'fixed',
-        'bottom': '30px',
-        'left': '30px',
-        'background-color': '#1a1a1a',
-        'color': '#ff2f6e',
-        'border': '1px solid #ff2f6e',
-        'width': '40px',
-        'height': '40px',
-        'border-radius': '50%',
-        'cursor': 'pointer',
-        'font-size': '18px',
-        'font-weight': 'bold',
-        'display': 'none'
-    });
-
-    $('body').append($backToTopBtn);
-
-    $(window).on('scroll', function () {
-        if ($(this).scrollTop() > 500) {
-            $backToTopBtn.fadeIn(300);
-        } else {
-            $backToTopBtn.fadeOut(300);
-        }
-    });
-
-    $backToTopBtn.on('click', function () {
-        $('html, body').animate({ scrollTop: 0 }, 'smooth');
-    });
-
-    $backToTopBtn.on('mouseover', function () {
-        $(this).css({ 'background-color': '#ff2f6e', 'color': '#fff' });
-    }).on('mouseout', function () {
-        $(this).css({ 'background-color': '#1a1a1a', 'color': '#ff2f6e' });
-    });
-
     let currentSpotlightIndex = 0;
     const $spotlightContainer = $('.spotlight-cards-container');
     const $spotlightCards = $('.spotlight-card');
